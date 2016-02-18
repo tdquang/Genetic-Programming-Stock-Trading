@@ -37,16 +37,17 @@ public class TradeGP extends GP {
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
             	for(String stock : tcfg.data.getStockSet()){
-            		int result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
+            		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
-	            		if(result>5) tcfg.trader.buy(stock);
-	            		else if(result<-5) tcfg.trader.sell(stock);
+	            		if(result>25) tcfg.trader.buy(stock);
+	            		else if(result<-25) tcfg.trader.sell(stock);
 	            		else continue;
             		} catch (Exception e){
             			e.printStackTrace();
             		}
             		
             	}
+            	tcfg.trader.nextDay();
             }
             totFit += tcfg.trader.calcFitness();
         }
@@ -91,7 +92,7 @@ public class TradeGP extends GP {
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
             	for(String stock : tcfg.data.getStockSet()){
-            		int result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
+            		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
 	            		if(result>5) tcfg.trader.buy(stock);
 	            		else if(result<-5) tcfg.trader.sell(stock);
@@ -101,6 +102,7 @@ public class TradeGP extends GP {
             		}
             		
             	}
+            	tcfg.trader.nextDay();
                 tcfg.trader.print(os);
             }
             float curGridFit = tcfg.trader.calcFitness();

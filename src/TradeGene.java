@@ -26,40 +26,43 @@ public class TradeGene extends GPGene{
     public GPGene createChild(GPNode gpo) { return new TradeGene(gpo); }
 
     //called by TradeGP.evaluate() for main branch of each GP
-    int evaluate(TradeVariables cfg, String stock, TradeGP gp) {
+    float evaluate(TradeVariables cfg, String stock, TradeGP gp) {
         
-        int arg1, arg2, arg3, result;
+        float arg1, arg2, arg3, result;
         switch (node.value()) {
             
+        case Trader.PRICE:
+        	return cfg.trader.priceXDaysAgo(stock, 0);
+        
+        case Trader.INVERT:
+        	return ( (TradeGene)get(0)).evaluate(cfg, stock, gp) * -1;
+        	
         case Trader.RANDOM:
-            return rgen.nextInt(3);
+            return rgen.nextInt(100)-50;
             
         case Trader.ZERO:
             return 0;
             
         case Trader.ONE: 
-            return 1;
+            return -50;
             
         case Trader.TWO: 
-            return 2;
+            return 50;
 
         case Trader.INC:
-            return ( ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) + 1) % 3;
+            return ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) + 10;
 
         case Trader.DEC:
-            result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) - 1;  
-            if (result<0) result = 2;
-            return result % 3;
+            result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) - 10;  
+            return result;
 
         case Trader.ADD:
             result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) + ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
-            if (result<0) result = 2;
-            return result % 3;
+            return result;
 
         case Trader.SUB:
             result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) - ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
-            if (result<0) result = 2;
-            return result % 3;
+            return result;
 
         case Trader.MAX:
             arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
@@ -77,7 +80,7 @@ public class TradeGene extends GPGene{
             arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
             arg2 = ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             arg3 = ( (TradeGene)get(2) ).evaluate(cfg, stock, gp);
-            if (arg1 == 0) return arg3;
+            if (arg1 < 25 && arg1 > -25) return arg3;
             else return arg2;
 
         default:

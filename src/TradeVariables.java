@@ -42,7 +42,7 @@ public class TradeVariables extends GPVariables{
     public byte isA() { return GPObject.USERVARIABLESID; }
 
     public void createTrader() {
-        trader = new Trader(data, StartingFunds, startingDate);
+        trader = new Trader(data, StartingFunds);
     }
 
     //get values from properties

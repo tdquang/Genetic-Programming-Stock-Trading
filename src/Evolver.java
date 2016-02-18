@@ -32,7 +32,7 @@ class Evolver extends GPRun {
     //  initialized set of functions & terminals
     protected GPAdfNodeSet createNodeSet(GPVariables cfg) {
         GPAdfNodeSet adfNs = new GPAdfNodeSet(1);
-        GPNodeSet ns0 = new GPNodeSet(11);
+        GPNodeSet ns0 = new GPNodeSet(13);
         adfNs.put(0, ns0);
 
         //MAIN TREE
@@ -47,6 +47,8 @@ class Evolver extends GPRun {
         ns0.putNode(new GPNode(Trader.MIN, "min", 2));
         ns0.putNode(new GPNode(Trader.ITE, "ite", 3));
         ns0.putNode(new GPNode(Trader.RANDOM, "random"));
+        ns0.putNode(new GPNode(Trader.PRICE, "price"));
+        ns0.putNode(new GPNode(Trader.INVERT, "invert", 1));
          
         return adfNs;
     }

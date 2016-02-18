@@ -31,6 +31,8 @@ public class Trader {
     public final static int MIN = 8;  
     public final static int ITE = 9; 
     public final static int RANDOM = 10;
+    public final static int PRICE = 11;
+    public final static int INVERT = 12;
 	
     //Trader private vars
     private Map<String, Integer> stocks;
@@ -41,11 +43,15 @@ public class Trader {
     private float funds;
     private StockData stockData;
     
-    public Trader(StockData data, float startingFunds, int[] startingDate){
+    public Trader(StockData data, float startingFunds){
+
     	stocks = new HashMap<String,Integer>();
     	rgen = new Random();
-    	start = startingDate.clone();
-    	date = startingDate;
+    	date = new int[3];
+    	date[0] = 2009;
+		date[1] = rgen.nextInt(3)+10;
+		date[2] = rgen.nextInt(30)+1;
+    	start = date.clone();
     	startFunds = startingFunds;
     	funds = startingFunds;
     	stockData = data;
@@ -122,7 +128,7 @@ public class Trader {
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	
     	//rounds to 3 decimal points because of precision error with floats
-    	return fit+stockValue;
+    	return -1*(fit+stockValue);
     }
     
     public void print(){
@@ -180,13 +186,8 @@ public class Trader {
 		float[] fitnessList = new float[numberOfTraders];
 		StockData data = new StockData();
 		int numStocks = data.getStockSet().size();
-		Random random = new Random();
 		for(int i = 0; i<numberOfTraders; i++){
-			int[] date = new int[3];
-			date[0] = 2009;
-			date[1] = random.nextInt(3)+10;
-			date[2] = random.nextInt(30)+1;
-			Trader trader = new Trader(data, startingFunds, date);
+			Trader trader = new Trader(data, startingFunds);
 			trader.nextDay();
 			for(int j = 0; j< 40; j++){
 				for(String stock : data.getStockSet()){
