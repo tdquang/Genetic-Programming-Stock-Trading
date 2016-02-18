@@ -46,11 +46,11 @@ public class StockData {
 	 *
 	 */
 	public class StockDay{
-		float a;
-		float b;
-		float c;
-		float d;
-		int e;
+		float open;
+		float high;
+		float low;
+		float close;
+		int volume;
 		
 		/**
 		 * Create a new stock day. 
@@ -58,15 +58,15 @@ public class StockData {
 		 * @param inputData - String array representing 4 floats and an int
 		 */
 		public StockDay(String[] inputData){
-			a = Float.parseFloat(inputData[0]);
-			b = Float.parseFloat(inputData[1]);
-			c = Float.parseFloat(inputData[2]);
-			d = Float.parseFloat(inputData[3]);
-			e = Integer.parseInt(inputData[4]);
+			open = Float.parseFloat(inputData[0]);
+			high = Float.parseFloat(inputData[1]);
+			low = Float.parseFloat(inputData[2]);
+			close = Float.parseFloat(inputData[3]);
+			volume = Integer.parseInt(inputData[4]);
 		}
 		
 		public String toString(){
-			return ""+a+" "+b+" "+c+" "+d+" "+e;
+			return ""+open+" "+high+" "+low+" "+close+" "+volume;
 		}
 	}
 	
@@ -161,7 +161,7 @@ public class StockData {
 		}
 		
 		if(item!=null){
-			return item.d;
+			return item.close;
 		}else{
 			return -1;
 		}
