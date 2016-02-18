@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintStream;
+
 import gpjpp.*;
 public class TradeGP extends GP {
 
@@ -35,11 +36,17 @@ public class TradeGP extends GP {
             //evaluate main tree for 80 steps of the dozer
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
-                int result = ((TradeGene)get(0)).evaluate(tcfg, this);
-                if (result>5) tcfg.trader.left();
-                else if (result==1) tcfg.trader.right();
-                else if (result==2) tcfg.trader.forward();
-                else System.out.println("ERROR, result not 1, 2, or 3 but instead "+result);
+            	for(String stock : tcfg.data.getStockSet()){
+            		int result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
+            		try{
+	            		if(result>5) tcfg.trader.buy(stock);
+	            		else if(result<-5) tcfg.trader.sell(stock);
+	            		else continue;
+            		} catch (Exception e){
+            			e.printStackTrace();
+            		}
+            		
+            	}
             }
             totFit += tcfg.trader.calcFitness();
         }
@@ -83,10 +90,17 @@ public class TradeGP extends GP {
             //evaluate main tree for 80 steps of the dozer, printing grid after each move
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
-                int result = ((TradeGene)get(0)).evaluate(tcfg, this);
-                if (result==0) tcfg.trader.left();
-                else if (result==1) tcfg.trader.right();
-                else if (result==2) tcfg.trader.forward();
+            	for(String stock : tcfg.data.getStockSet()){
+            		int result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
+            		try{
+	            		if(result>5) tcfg.trader.buy(stock);
+	            		else if(result<-5) tcfg.trader.sell(stock);
+	            		else continue;
+            		} catch (Exception e){
+            			e.printStackTrace();
+            		}
+            		
+            	}
                 tcfg.trader.print(os);
             }
             float curGridFit = tcfg.trader.calcFitness();

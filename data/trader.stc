@@ -1,0 +1,44 @@
+PopulationSize            = 500
+NumberOfGenerations       = 51
+CrossoverProbability      = 90.0
+CreationProbability       = 0.0
+CreationType              = RampedHalf
+MaximumDepthForCreation   = 6
+MaximumDepthForCrossover  = 17
+MaximumComplexity         = 200
+SelectionType             = Probabilistic
+TournamentSize            = 7
+DemeSize                  = 100
+DemeticMigProbability     = 100.0
+SwapMutationProbability   = 0.0
+ShrinkMutationProbability = 0.0
+TerminationFitness        = 0.0
+GoodRuns                  = 5
+DemeticGrouping           = false
+AddBestToNewPopulation    = false
+SteadyState               = false
+PrintDetails              = false
+PrintPopulation           = false
+PrintExpression           = true
+PrintTree                 = true
+TreeFontSize              = 12
+UseADFs                   = false
+TestDiversity             = true
+ComplexityAffectsFitness  = true
+CheckpointGens            = 0
+StartingFunds           = 10000.0
+NumTestTraders              = 10
+NumSteps                  = 80
+
+RPB:  inc(1) dec(1) add(2) sub(2) max(2) min(2) ite(3) random two one zero
+
+
+Run number 1 (good runs 0)
+Too complex 0
+Duplicate 322
+
+ Gen|              Fitness           |   Complexity    |    Depth   |Variety
+    |      Best    Average      Worst|   B      A     W|  B    A   W|
+   0|      0.00       0.00       0.10|   2   12.9    98|  2  3.8   6| 1.000  
+   1|      0.00       0.00       0.09|   1   12.7    91|  1  3.9   6| 0.890  
+   2|      0.00       0.00       0.08|   1   13.2    83|  1  4.1  10| 0.880  

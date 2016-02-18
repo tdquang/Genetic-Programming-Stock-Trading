@@ -26,7 +26,7 @@ public class TradeGene extends GPGene{
     public GPGene createChild(GPNode gpo) { return new TradeGene(gpo); }
 
     //called by TradeGP.evaluate() for main branch of each GP
-    int evaluate(TradeVariables cfg, TradeGP gp) {
+    int evaluate(TradeVariables cfg, String stock, TradeGP gp) {
         
         int arg1, arg2, arg3, result;
         switch (node.value()) {
@@ -44,39 +44,39 @@ public class TradeGene extends GPGene{
             return 2;
 
         case Trader.INC:
-            return ( ( (TradeGene)get(0) ).evaluate(cfg, gp) + 1) % 3;
+            return ( ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) + 1) % 3;
 
         case Trader.DEC:
-            result = ( (TradeGene)get(0) ).evaluate(cfg, gp) - 1;  
+            result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) - 1;  
             if (result<0) result = 2;
             return result % 3;
 
         case Trader.ADD:
-            result = ( (TradeGene)get(0) ).evaluate(cfg, gp) + ( (TradeGene)get(1) ).evaluate(cfg, gp);
+            result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) + ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             if (result<0) result = 2;
             return result % 3;
 
         case Trader.SUB:
-            result = ( (TradeGene)get(0) ).evaluate(cfg, gp) - ( (TradeGene)get(1) ).evaluate(cfg, gp);
+            result = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) - ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             if (result<0) result = 2;
             return result % 3;
 
         case Trader.MAX:
-            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, gp);
-            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, gp);
+            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
+            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             if (arg1 > arg2) return arg1;
             else return arg2;
 
         case Trader.MIN:
-            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, gp);
-            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, gp);
+            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
+            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             if (arg1 < arg2) return arg1;
             else return arg2;
 
         case Trader.ITE:
-            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, gp);
-            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, gp);
-            arg3 = ( (TradeGene)get(2) ).evaluate(cfg, gp);
+            arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
+            arg2 = ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
+            arg3 = ( (TradeGene)get(2) ).evaluate(cfg, stock, gp);
             if (arg1 == 0) return arg3;
             else return arg2;
 

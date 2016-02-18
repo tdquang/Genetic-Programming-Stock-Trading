@@ -32,13 +32,12 @@ class Evolver extends GPRun {
     //  initialized set of functions & terminals
     protected GPAdfNodeSet createNodeSet(GPVariables cfg) {
         GPAdfNodeSet adfNs = new GPAdfNodeSet(1);
-        GPNodeSet ns0 = new GPNodeSet(19);
+        GPNodeSet ns0 = new GPNodeSet(11);
         adfNs.put(0, ns0);
 
         //MAIN TREE
         ns0.putNode(new GPNode(Trader.ZERO, "zero"));
         ns0.putNode(new GPNode(Trader.ONE, "one"));
-        ns0.putNode(new GPNode(Trader.RANDOM, "random"));
         ns0.putNode(new GPNode(Trader.TWO, "two"));
         ns0.putNode(new GPNode(Trader.INC, "inc", 1));
         ns0.putNode(new GPNode(Trader.DEC, "dec", 1));
@@ -47,6 +46,7 @@ class Evolver extends GPRun {
         ns0.putNode(new GPNode(Trader.MAX, "max", 2));
         ns0.putNode(new GPNode(Trader.MIN, "min", 2));
         ns0.putNode(new GPNode(Trader.ITE, "ite", 3));
+        ns0.putNode(new GPNode(Trader.RANDOM, "random"));
          
         return adfNs;
     }
@@ -69,7 +69,7 @@ class Evolver extends GPRun {
         if (args.length == 1)
             baseName = args[0];
         else
-            baseName = "tartarus";
+            baseName = "trader";
 
         //construct the test case
         Evolver test = new Evolver(baseName);
