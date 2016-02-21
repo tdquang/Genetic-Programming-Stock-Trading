@@ -20,7 +20,6 @@ import java.io.*;
 import java.util.Properties;
 import gpjpp.*;
 
-//Lawnmower test
 class Evolver extends GPRun {
 
     //must override GPRun.createVariables to return lawn-specific variables
