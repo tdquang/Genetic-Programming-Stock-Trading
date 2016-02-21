@@ -93,9 +93,10 @@ public class Trader {
     }
     
     public float priceXDaysAgo(String stockName, int days){
-    	int[] historyDate = date;
-    	for(int i = days; i>0; i++){
+    	int[] historyDate = date.clone();
+    	for(int i = days; i>0; i--){
         	do{
+//        		System.out.println(stockName+": "+historyDate[0]+"/"+historyDate[1]+"/"+historyDate[2]);
         		historyDate[2]-=1;
     	    	if(historyDate[2]<=0){
     	    		historyDate[1]-=1;
@@ -106,13 +107,19 @@ public class Trader {
     	    		}
     	    	}
     	    	if(historyDate[0]<2009){
+//    	    		System.out.println("here");
     	    		historyDate = new int[]{2009,8,21};
+    	    		break;
     	    	}else if(historyDate[0]==2009){
     	    		if(historyDate[1]<8){
+//        	    		System.out.println("here2");
     	    			historyDate = new int[]{2009,8,21};
+    	    			break;
     	    		}else if(historyDate[1]==8){
-    	    			if(historyDate[2]<21){
+    	    			if(historyDate[2]<=21){
+//    	    	    		System.out.println("here3");
     	    				historyDate = new int[]{2009,8,21};
+    	    				break;
     	    			}
     	    		}
     	    	}
