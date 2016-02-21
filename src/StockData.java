@@ -75,8 +75,10 @@ public class StockData {
 	 * @throws NumberFormatException
 	 * @throws IOException
 	 */
+	// Location of the data file
+	final String data_location = "/Users/dangquang2011/Desktop/sp500hst.txt";
 	public StockData() throws NumberFormatException, IOException{
-		Path path = Paths.get("/Users/Mullan/Dropbox/workspace/EvoStocks/src/sp500hst.txt");
+		Path path = Paths.get(data_location);
 		stocks = new HashMap<String, Stock>();
 		for (String line : Files.readAllLines(path)){
 			String[] splitLine = line.split(",");

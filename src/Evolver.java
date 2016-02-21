@@ -48,7 +48,10 @@ class Evolver extends GPRun {
         ns0.putNode(new GPNode(Trader.RANDOM, "random"));
         ns0.putNode(new GPNode(Trader.PRICE, "price"));
         ns0.putNode(new GPNode(Trader.INVERT, "invert", 1));
-         
+        ns0.putNode(new GPNode(Trader.PAST1M, "past1m"));
+        ns0.putNode(new GPNode(Trader.AVG1M, "avg1m"));
+        ns0.putNode(new GPNode(Trader.AVG1W, "avg1w"));
+        
         return adfNs;
     }
 
