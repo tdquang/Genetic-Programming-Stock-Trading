@@ -31,7 +31,6 @@ public class TradeGP extends GP {
         // test GP on N random boards
         for (int k=0; k<tcfg.NumTestTraders; k++) {
             //create new random grid
-        	System.out.println("trader: "+k);
             tcfg.createTrader();
             
             //evaluate main tree for 80 steps of the dozer
