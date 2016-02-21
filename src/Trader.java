@@ -8,11 +8,13 @@ import java.util.Random;
 public class Trader {
 	
 	//custom exceptions
+	@SuppressWarnings("serial")
 	public class InvalidSellException extends Exception{
 		public InvalidSellException(String message){
 			super(message);
 		}
 	}
+	@SuppressWarnings("serial")
 	public class InvalidBuyException extends Exception{
 		public InvalidBuyException(String message){
 			super(message);
@@ -128,7 +130,7 @@ public class Trader {
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	
     	//rounds to 3 decimal points because of precision error with floats
-    	return -1*(fit+stockValue);
+    	return (float) (1.0/(fit+stockValue));
     }
     
     public void print(){
@@ -181,6 +183,7 @@ public class Trader {
     
 	public static void main(String[] args) throws NumberFormatException, IOException, InvalidBuyException, InvalidSellException {
 		// TODO Auto-generated method stub
+		
 		int startingFunds = 10000;
 		int numberOfTraders = 1;
 		float[] fitnessList = new float[numberOfTraders];
@@ -213,9 +216,9 @@ public class Trader {
 		}
 		
 		float sum = 0;
-		float best = -1*startingFunds;
+		float best = 2*startingFunds;
 		for(float fit : fitnessList){
-			if(fit>best){
+			if(fit<best){
 				best = fit;
 			}
 			sum+=fit;

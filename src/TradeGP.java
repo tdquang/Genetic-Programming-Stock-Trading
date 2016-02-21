@@ -78,7 +78,7 @@ public class TradeGP extends GP {
         
         // write grid at each step for this genome
         TradeVariables tcfg = (TradeVariables)cfg;
-        TradeGene gene = (TradeGene)get(0);
+//        TradeGene gene = (TradeGene)get(0);
 
         double totFit = 0;
         // run this genome on some number of test grids, printing the resulting grid at each step

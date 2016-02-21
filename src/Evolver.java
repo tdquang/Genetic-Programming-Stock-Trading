@@ -16,8 +16,6 @@
 //
 // Send comments, suggestions, problems to kimk@turbopower.com
 
-import java.io.*;
-import java.util.Properties;
 import gpjpp.*;
 
 class Evolver extends GPRun {
