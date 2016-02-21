@@ -122,6 +122,36 @@ public class Trader {
     	
     }
     
+    public float getAvgPrice(String stockName, int numDays){
+    	int[] historyDate = date;
+    	float avg = 0;
+    	for(int i = numDays; i>0; i++){
+        	do{
+        		historyDate[2]-=1;
+    	    	if(historyDate[2]<=0){
+    	    		historyDate[1]-=1;
+    	    		historyDate[2]=31;
+    	    		if(historyDate[1]<=0){
+    	    			historyDate[0]-=1;
+    	    			historyDate[1] = 12;
+    	    		}
+    	    	}
+    	    	if(historyDate[0]<2009){
+    	    		historyDate = new int[]{2009,8,21};
+    	    	}else if(historyDate[0]==2009){
+    	    		if(historyDate[1]<8){
+    	    			historyDate = new int[]{2009,8,21};
+    	    		}else if(historyDate[1]==8){
+    	    			if(historyDate[2]<21){
+    	    				historyDate = new int[]{2009,8,21};
+    	    			}
+    	    		}
+    	    	}
+        	}while(stockData.getPrice(stockName, historyDate)==-1);
+    	}
+    	return avg/numDays;
+    	
+    }
     public float calcFitness(){
     	float fit = funds-startFunds;
     	float stockValue = 0;

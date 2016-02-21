@@ -88,18 +88,10 @@ public class TradeGene extends GPGene{
         	return cfg.trader.priceXDaysAgo(stock, 30);
         	
         case Trader.AVG1M:
-        	float sum1m = 0;
-        	for (int i = 0; i < 30; i++){
-        		sum1m += cfg.trader.priceXDaysAgo(stock, i);
-        	}
-        	return sum1m/30;
+        	return cfg.trader.getAvgPrice(stock, 30);
         	
         case Trader.AVG1W:
-        	float sum1w = 0;
-        	for (int i = 0; i < 5; i++){
-        		sum1w += cfg.trader.priceXDaysAgo(stock, i);
-        	}
-        	return sum1w/7;
+        	return cfg.trader.getAvgPrice(stock, 5);
         	
         default:
             throw new RuntimeException("Undefined function type "+node.value());
