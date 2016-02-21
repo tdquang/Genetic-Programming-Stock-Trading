@@ -1,5 +1,5 @@
-PopulationSize            = 50
-NumberOfGenerations       = 100
+PopulationSize            = 10
+NumberOfGenerations       = 10
 CrossoverProbability      = 0.9
 CreationProbability       = 5.0
 CreationType              = RampedHalf

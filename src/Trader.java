@@ -107,17 +107,14 @@ public class Trader {
     	    		}
     	    	}
     	    	if(historyDate[0]<2009){
-//    	    		System.out.println("here");
     	    		historyDate = new int[]{2009,8,21};
     	    		break;
     	    	}else if(historyDate[0]==2009){
     	    		if(historyDate[1]<8){
-//        	    		System.out.println("here2");
     	    			historyDate = new int[]{2009,8,21};
     	    			break;
     	    		}else if(historyDate[1]==8){
     	    			if(historyDate[2]<=21){
-//    	    	    		System.out.println("here3");
     	    				historyDate = new int[]{2009,8,21};
     	    				break;
     	    			}
@@ -145,12 +142,15 @@ public class Trader {
     	    	}
     	    	if(historyDate[0]<2009){
     	    		historyDate = new int[]{2009,8,21};
+    	    		break;
     	    	}else if(historyDate[0]==2009){
     	    		if(historyDate[1]<8){
     	    			historyDate = new int[]{2009,8,21};
+    	    			break;
     	    		}else if(historyDate[1]==8){
     	    			if(historyDate[2]<21){
     	    				historyDate = new int[]{2009,8,21};
+    	    				break;
     	    			}
     	    		}
     	    	}
