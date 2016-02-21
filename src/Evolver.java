@@ -29,7 +29,7 @@ class Evolver extends GPRun {
     //  initialized set of functions & terminals
     protected GPAdfNodeSet createNodeSet(GPVariables cfg) {
         GPAdfNodeSet adfNs = new GPAdfNodeSet(1);
-        GPNodeSet ns0 = new GPNodeSet(13);
+        GPNodeSet ns0 = new GPNodeSet(16);
         adfNs.put(0, ns0);
 
         //MAIN TREE
