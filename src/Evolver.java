@@ -42,7 +42,7 @@ class Evolver extends GPRun {
         ns0.putNode(new GPNode(Trader.SUB, "sub", 2));
         ns0.putNode(new GPNode(Trader.MAX, "max", 2));
         ns0.putNode(new GPNode(Trader.MIN, "min", 2));
-        ns0.putNode(new GPNode(Trader.ITE, "ite", 3));
+        ns0.putNode(new GPNode(Trader.ITE, "ite", 4));
         ns0.putNode(new GPNode(Trader.RANDOM, "random"));
         ns0.putNode(new GPNode(Trader.PRICE, "price"));
         ns0.putNode(new GPNode(Trader.INVERT, "invert", 1));

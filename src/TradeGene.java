@@ -28,7 +28,7 @@ public class TradeGene extends GPGene{
     //called by TradeGP.evaluate() for main branch of each GP
     float evaluate(TradeVariables cfg, String stock, TradeGP gp) {
         
-        float arg1, arg2, arg3, result;
+        float arg1, arg2, arg3, arg4, result;
         switch (node.value()) {
             
         case Trader.PRICE:
@@ -80,7 +80,8 @@ public class TradeGene extends GPGene{
             arg1 = ( (TradeGene)get(0) ).evaluate(cfg, stock, gp);
             arg2 = ( (TradeGene)get(1) ).evaluate(cfg, stock, gp);
             arg3 = ( (TradeGene)get(2) ).evaluate(cfg, stock, gp);
-            if (arg1 < 25 && arg1 > -25) return arg3;
+            arg4 = ( (TradeGene)get(3) ).evaluate(cfg, stock, gp);
+            if (arg1 < arg2) return arg3;
             else return arg2;
 
         case Trader.PAST1M:

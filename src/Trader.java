@@ -132,11 +132,7 @@ public class Trader {
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	
     	//rounds to 3 decimal points because of precision error with floats
-<<<<<<< HEAD
-    	return (float) (1.0/(fit+stockValue));
-=======
     	return 1/(fit+stockValue);
->>>>>>> 70b4debbb2f7ded4ae1a40d0f939a49983c503ba
     }
     
     public void print(){
@@ -222,11 +218,7 @@ public class Trader {
 		}
 		
 		float sum = 0;
-<<<<<<< HEAD
-		float best = 2*startingFunds;
-=======
 		float best = 1*startingFunds;
->>>>>>> 70b4debbb2f7ded4ae1a40d0f939a49983c503ba
 		for(float fit : fitnessList){
 			if(fit<best){
 				best = fit;
