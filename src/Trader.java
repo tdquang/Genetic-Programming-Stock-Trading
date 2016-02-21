@@ -24,7 +24,7 @@ public class Trader {
     //functions and terminals
     public final static int ZERO = 0;
     public final static int ONE = 1; 
-    public final static int TWO = 2;  
+    public final static int TWO = 2; 
     public final static int INC = 3;  
     public final static int DEC = 4;  
     public final static int ADD = 5;  
@@ -35,6 +35,9 @@ public class Trader {
     public final static int RANDOM = 10;
     public final static int PRICE = 11;
     public final static int INVERT = 12;
+    public final static int PAST1M = 13;
+    public final static int AVG1M = 14;
+    public final static int AVG1W = 15;
 	
     //Trader private vars
     private Map<String, Integer> stocks;
@@ -84,7 +87,6 @@ public class Trader {
     			stocks.put(stockName, number-1);
     		}
     	}else{
-    		//throw new InvalidSellException("Can't sell "+stockName);'
     		return;
     	}
     	funds+=price;
@@ -130,7 +132,11 @@ public class Trader {
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	
     	//rounds to 3 decimal points because of precision error with floats
+<<<<<<< HEAD
     	return (float) (1.0/(fit+stockValue));
+=======
+    	return 1/(fit+stockValue);
+>>>>>>> 70b4debbb2f7ded4ae1a40d0f939a49983c503ba
     }
     
     public void print(){
@@ -216,7 +222,11 @@ public class Trader {
 		}
 		
 		float sum = 0;
+<<<<<<< HEAD
 		float best = 2*startingFunds;
+=======
+		float best = 1*startingFunds;
+>>>>>>> 70b4debbb2f7ded4ae1a40d0f939a49983c503ba
 		for(float fit : fitnessList){
 			if(fit<best){
 				best = fit;

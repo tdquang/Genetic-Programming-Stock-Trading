@@ -35,7 +35,7 @@ public class TradeGene extends GPGene{
         	return cfg.trader.priceXDaysAgo(stock, 0);
         
         case Trader.INVERT:
-        	return ( (TradeGene)get(0)).evaluate(cfg, stock, gp) * -1;
+        	return ( (TradeGene)get(0) ).evaluate(cfg, stock, gp) * -1;
         	
         case Trader.RANDOM:
             return rgen.nextInt(100)-50;
@@ -83,6 +83,23 @@ public class TradeGene extends GPGene{
             if (arg1 < 25 && arg1 > -25) return arg3;
             else return arg2;
 
+        case Trader.PAST1M:
+        	return cfg.trader.priceXDaysAgo(stock, 30);
+        	
+        case Trader.AVG1M:
+        	float sum1m = 0;
+        	for (int i = 0; i < 30; i++){
+        		sum1m += cfg.trader.priceXDaysAgo(stock, i);
+        	}
+        	return sum1m/30;
+        	
+        case Trader.AVG1W:
+        	float sum1w = 0;
+        	for (int i = 0; i < 5; i++){
+        		sum1w += cfg.trader.priceXDaysAgo(stock, i);
+        	}
+        	return sum1w/7;
+        	
         default:
             throw new RuntimeException("Undefined function type "+node.value());
         }
