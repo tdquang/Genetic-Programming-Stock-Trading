@@ -98,6 +98,7 @@ public class Trader {
         	do{
 //        		System.out.println(stockName+": "+historyDate[0]+"/"+historyDate[1]+"/"+historyDate[2]);
         		historyDate[2]-=1;
+        		
     	    	if(historyDate[2]<=0){
     	    		historyDate[1]-=1;
     	    		historyDate[2]=31;
