@@ -128,9 +128,9 @@ public class Trader {
     }
     
     public float getAvgPrice(String stockName, int numDays){
-    	int[] historyDate = date;
-    	float avg = 0;
-    	for(int i = numDays; i>0; i++){
+    	int[] historyDate = date.clone();
+    	float avg = stockData.getPrice(stockName, historyDate);
+    	for(int i = numDays; i>0; i--){
         	do{
         		historyDate[2]-=1;
     	    	if(historyDate[2]<=0){
@@ -156,8 +156,9 @@ public class Trader {
     	    		}
     	    	}
         	}while(stockData.getPrice(stockName, historyDate)==-1);
+        	avg+=stockData.getPrice(stockName, historyDate);
     	}
-    	return avg/numDays;
+    	return avg/(numDays+1);
     	
     }
     public float calcFitness(){
@@ -168,9 +169,8 @@ public class Trader {
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
-    	
-    	//rounds to 3 decimal points because of precision error with floats
-    	return 1/(fit+stockValue);
+    	if(fit+stockValue<0){return 100;}
+    	return 	1/(fit+stockValue);
     }
     
     public void print(){
