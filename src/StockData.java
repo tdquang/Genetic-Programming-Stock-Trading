@@ -76,7 +76,7 @@ public class StockData {
 	 * @throws IOException
 	 */
 	// Location of the data file
-	final String data_location = "/Users/dangquang2011/Desktop/sp500hst.txt";
+	final String data_location = "/Users/Mullan/Dropbox/workspace/EvoStocks/src/sp500hst.txt";
 	public StockData() throws NumberFormatException, IOException{
 		Path path = Paths.get(data_location);
 		stocks = new HashMap<String, Stock>();

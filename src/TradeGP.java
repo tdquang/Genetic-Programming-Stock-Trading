@@ -31,6 +31,7 @@ public class TradeGP extends GP {
         // test GP on N random boards
         for (int k=0; k<tcfg.NumTestTraders; k++) {
             //create new random grid
+        	System.out.println("trader: "+k);
             tcfg.createTrader();
             
             //evaluate main tree for 80 steps of the dozer
@@ -90,7 +91,7 @@ public class TradeGP extends GP {
             os.println("---------------------------------");
             //evaluate main tree for 80 steps of the dozer, printing grid after each move
             //TODO determine actions based on output
-            for (int i=0; i<tcfg.NumSteps; i++) {
+            for (int i=0; i<tcfg.NumSteps; i++) {          
             	for(String stock : tcfg.data.getStockSet()){
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
