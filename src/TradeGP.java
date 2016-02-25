@@ -103,11 +103,11 @@ public class TradeGP extends GP {
             		
             	}
             	tcfg.trader.nextDay();
-                tcfg.trader.print(os);
             }
+            tcfg.trader.print(os);
             float curGridFit = tcfg.trader.calcFitness();
             totFit += curGridFit;
-            os.println("GRID FITNESS = "+curGridFit);
+            os.println("TRADER FITNESS = "+curGridFit);
         }
         totFit = totFit/tcfg.NumTestTraders;
         if (cfg.ComplexityAffectsFitness)
