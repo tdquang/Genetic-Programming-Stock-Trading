@@ -355,13 +355,6 @@ public abstract class GPRun {
 
                     //show this generation
                     showGeneration(false, curGen, savedCheckpoint);
-
-                    goodRun = (pop.bestFitness < cfg.TerminationFitness);
-                    if (goodRun) {
-                        //break if terminating fitness found
-                        goodRuns++;
-                        break;
-                    }
                 }
 
                 //read time for generation rate

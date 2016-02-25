@@ -305,9 +305,9 @@ public class GP extends GPContainer {
      * tournament</a> selection method.
      */
     protected boolean betterThan(GP gp) {
-        if (stdFitness < gp.stdFitness)
-            return true;
         if (stdFitness > gp.stdFitness)
+            return true;
+        if (stdFitness < gp.stdFitness)
             return false;
         return (length() < gp.length());
     }

@@ -192,7 +192,7 @@ public class Trader {
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	if(fit+stockValue<0){return 100;}
-    	return 	1/(fit+stockValue);
+    	return 	fit+stockValue;
     }
     
     public void print(){

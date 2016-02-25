@@ -120,14 +120,11 @@ public class StockData {
 	 * @throws IOException
 	 */
 	// Location of the data file
-<<<<<<< HEAD
 	final String data_location = "/Users/dangquang2011/Desktop/sp500hst.txt";
-=======
-	final String data_location = "/Users/Mullan/Dropbox/workspace/EvoStocks/src/sp500hst.txt";
-	final String netCapPath = "/Users/Mullan/Desktop/EvoStocks/netCap.csv";
-	final String DPSPath = "/Users/Mullan/Desktop/EvoStocks/DPS.csv";
-	final String financialDeptPath = "/Users/Mullan/Desktop/EvoStocks/financialDept.csv";
->>>>>>> origin/develop
+	final String netCapPath = "/Users/dangquang2011/Desktop/Stock Comps/netCap.csv";
+	final String DPSPath = "/Users/dangquang2011/Desktop/Stock Comps/DPS.csv";
+	final String financialDeptPath = "/Users/dangquang2011/Desktop/Stock Comps/financialDept.csv";
+	
 	public StockData() throws NumberFormatException, IOException{
 		Path path = Paths.get(data_location);
 		stocks = new HashMap<String, Stock>();
