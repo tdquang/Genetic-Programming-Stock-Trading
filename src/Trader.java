@@ -70,6 +70,8 @@ public class Trader {
     	date[0] = 2009;
 		date[1] = rgen.nextInt(3)+10;
 		date[2] = rgen.nextInt(30)+1;
+		date[1] = 11;
+		date[2] = 24;
     	start = date.clone();
     	startFunds = startingFunds;
     	funds = startingFunds;
@@ -191,8 +193,7 @@ public class Trader {
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
-    	if(fit+stockValue<0){return 100;}
-    	return 	1/(fit+stockValue);
+    	return 	fit+stockValue;
     }
     
     public void print(){

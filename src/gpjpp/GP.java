@@ -305,13 +305,14 @@ public class GP extends GPContainer {
      * tournament</a> selection method.
      */
     protected boolean betterThan(GP gp) {
-        if (stdFitness < gp.stdFitness)
-            return true;
         if (stdFitness > gp.stdFitness)
+            return true;
+        if (stdFitness < gp.stdFitness)
             return false;
         return (length() < gp.length());
     }
-
+    //TODO change from max to min here
+    
     /**
      * Returns the complexity (length, or number of nodes) of the
      * GP.

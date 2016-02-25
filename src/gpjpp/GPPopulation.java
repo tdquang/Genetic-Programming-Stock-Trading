@@ -1375,7 +1375,7 @@ public class GPPopulation extends GPContainer {
             //System.out.println(curFitness);
             sumFit += curFitness;
 
-            if ((worstFitness < curFitness) ||
+            if ((worstFitness > curFitness) ||
                 ((worstFitness == curFitness) && (worstLen < curLen))) {
                 worstOfPopulation = i;
                 worst = current;
@@ -1383,7 +1383,7 @@ public class GPPopulation extends GPContainer {
                 worstLen = curLen;
             }
 
-            if ((bestFitness > curFitness) ||
+            if ((bestFitness < curFitness) ||
                 ((bestFitness == curFitness) && (bestLen > curLen))) {
                 bestOfPopulation = i;
                 best = current;
