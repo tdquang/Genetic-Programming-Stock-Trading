@@ -301,7 +301,6 @@ public abstract class GPRun {
         try {
             curGen = 0;
             curRun = 1;
-            goodRuns = 0;
             cntGen = cfg.CheckpointGens;
 
             //load checkpoint if available
@@ -312,7 +311,7 @@ public abstract class GPRun {
             //do runs until some that reach terminating fitness are found
             do {
                 //display run number
-                showRunNumber(curRun, goodRuns);
+                showRunNumber(curRun);
 
                 //time the run
                 long timeStart = System.currentTimeMillis();
@@ -528,10 +527,10 @@ public abstract class GPRun {
      * Prints the current run number and number of good runs
      * so far to System.out, sout, and dout.
      */
-    protected void showRunNumber(int curRun, int goodRuns) {
+    protected void showRunNumber(int curRun) {
         echoPrint("");
         String dispStr =
-            "Run number "+curRun+" (good runs "+goodRuns+")";
+            "Run number "+curRun;
         echoPrint(dispStr);
         if (cfg.PrintDetails)
             dout.println(dispStr);

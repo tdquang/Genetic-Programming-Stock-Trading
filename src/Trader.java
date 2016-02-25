@@ -193,7 +193,12 @@ public class Trader {
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
+<<<<<<< Updated upstream
     	return 	fit+stockValue;
+=======
+    	if(fit+stockValue<0){return 100;}
+    	return fit+stockValue;
+>>>>>>> Stashed changes
     }
     
     public void print(){
