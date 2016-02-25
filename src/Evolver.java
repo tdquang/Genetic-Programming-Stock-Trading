@@ -29,7 +29,7 @@ class Evolver extends GPRun {
     //  initialized set of functions & terminals
     protected GPAdfNodeSet createNodeSet(GPVariables cfg) {
         GPAdfNodeSet adfNs = new GPAdfNodeSet(1);
-        GPNodeSet ns0 = new GPNodeSet(16);
+        GPNodeSet ns0 = new GPNodeSet(29);
         adfNs.put(0, ns0);
 
         //MAIN TREE
@@ -49,6 +49,19 @@ class Evolver extends GPRun {
         ns0.putNode(new GPNode(Trader.PAST1M, "past1m"));
         ns0.putNode(new GPNode(Trader.AVG1M, "avg1m"));
         ns0.putNode(new GPNode(Trader.AVG1W, "avg1w"));
+        ns0.putNode(new GPNode(Trader.DPS, "dps"));
+        ns0.putNode(new GPNode(Trader.BPS, "bps"));
+        ns0.putNode(new GPNode(Trader.SPS, "sps"));
+        ns0.putNode(new GPNode(Trader.ROE, "roe"));
+        ns0.putNode(new GPNode(Trader.NETF, "netf"));
+        ns0.putNode(new GPNode(Trader.NONCI, "non-ci"));
+        ns0.putNode(new GPNode(Trader.EBITDA, "ebitda"));
+        ns0.putNode(new GPNode(Trader.REVENUE, "rev"));
+        ns0.putNode(new GPNode(Trader.OPINC, "oper-inc"));
+        ns0.putNode(new GPNode(Trader.NETINC, "net-inc"));
+        ns0.putNode(new GPNode(Trader.OPCASH, "oper-cash"));
+        ns0.putNode(new GPNode(Trader.FREECASH, "free cash"));
+        ns0.putNode(new GPNode(Trader.NETCAP, "netcap"));
         
         return adfNs;
     }

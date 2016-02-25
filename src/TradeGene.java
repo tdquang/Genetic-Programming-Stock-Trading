@@ -93,6 +93,48 @@ public class TradeGene extends GPGene{
         case Trader.AVG1W:
         	return cfg.trader.getAvgPrice(stock, 5);
         	
+        case Trader.DPS:
+        	return cfg.trader.getQuarterlyData(stock, StockData.DPS);
+        
+        case Trader.EPS:
+        	return cfg.trader.getQuarterlyData(stock, StockData.EPS);
+        	
+        case Trader.BPS:
+        	return cfg.trader.getQuarterlyData(stock, StockData.BPS);
+        	
+        case Trader.SPS:
+        	return cfg.trader.getQuarterlyData(stock, StockData.SPS);
+        	
+        case Trader.ROE:
+        	return cfg.trader.getQuarterlyData(stock, StockData.ROE);
+        
+        case Trader.NETF:
+        	return cfg.trader.getQuarterlyData(stock, StockData.NETF);
+        	
+        case Trader.NONCI:
+        	return cfg.trader.getQuarterlyData(stock, StockData.NONCI);
+        	
+        case Trader.EBITDA:
+        	return cfg.trader.getQuarterlyData(stock, StockData.EBITDA);
+        	
+        case Trader.REVENUE:
+        	return cfg.trader.getQuarterlyData(stock, StockData.REVENUE);
+        	
+        case Trader.OPINC:
+        	return cfg.trader.getQuarterlyData(stock, StockData.OPINC);
+        	
+        case Trader.NETINC:
+        	return cfg.trader.getQuarterlyData(stock, StockData.NETINC);
+        	
+        case Trader.OPCASH:
+        	return cfg.trader.getQuarterlyData(stock, StockData.OPCASH);
+        	
+        case Trader.FREECASH:
+        	return cfg.trader.getQuarterlyData(stock, StockData.FREECASH);
+
+        case Trader.NETCAP:
+        	return cfg.trader.getNetCap(stock);
+        	
         default:
             throw new RuntimeException("Undefined function type "+node.value());
         }

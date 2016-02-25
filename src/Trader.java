@@ -38,6 +38,20 @@ public class Trader {
     public final static int PAST1M = 13;
     public final static int AVG1M = 14;
     public final static int AVG1W = 15;
+    public final static int DPS = 16;
+    public final static int EPS = 17;
+    public static final int BPS = 18;
+	public static final int SPS = 19;
+	public static final int ROE = 20;
+	public static final int NETF = 21; //net financial
+	public static final int NONCI = 22; //non-controlling interest
+	public static final int EBITDA = 23;
+	public static final int REVENUE = 24;
+	public static final int OPINC = 25; //operating income
+	public static final int NETINC = 26; //net income
+	public static final int OPCASH = 27; //operating cashflow
+	public static final int FREECASH = 28;
+    public final static int NETCAP = 29;
 	
     //Trader private vars
     private Map<String, Integer> stocks;
@@ -90,6 +104,14 @@ public class Trader {
     		return;
     	}
     	funds+=price;
+    }
+    
+    public float getQuarterlyData(String stockName, int type){
+    	return stockData.getQuarterlyData(stockName, new int[]{date[0], date[1]}, type);
+    }
+    
+    public float getNetCap(String stockName){
+    	return stockData.getNetCap(stockName, new int[]{date[0],date[1]});
     }
     
     public float priceXDaysAgo(String stockName, int days){
