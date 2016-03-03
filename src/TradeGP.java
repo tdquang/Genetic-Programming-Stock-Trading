@@ -40,8 +40,8 @@ public class TradeGP extends GP {
             		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
-	            		if(result>25) tcfg.trader.buy(stock);
-	            		else if(result<-25) tcfg.trader.sell(stock);
+	            		if(result>50) tcfg.trader.buy(stock);
+	            		else if(result<-50) tcfg.trader.sell(stock);
 	            		else continue;
             		} catch (Exception e){
             			e.printStackTrace();
@@ -96,8 +96,8 @@ public class TradeGP extends GP {
             		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
-	            		if(result>5) tcfg.trader.buy(stock);
-	            		else if(result<-5) tcfg.trader.sell(stock);
+	            		if(result>50) tcfg.trader.buy(stock);
+	            		else if(result<-50) tcfg.trader.sell(stock);
 	            		else continue;
             		} catch (Exception e){
             			e.printStackTrace();
@@ -111,6 +111,7 @@ public class TradeGP extends GP {
             totFit += curGridFit;
             os.println("TRADER FITNESS = "+curGridFit);
         }
+
         totFit = totFit/tcfg.NumTestTraders;
         if (cfg.ComplexityAffectsFitness)
             //add length into fitness to promote small trees
