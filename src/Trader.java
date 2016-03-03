@@ -193,8 +193,12 @@ public class Trader {
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
-
-    	return fit+stockValue;
+    	float marketPerformance = (startFunds/stockData.getPrice("#", start))*stockData.getPrice("#", date);
+//    	System.out.println(marketPerformance);
+//    	System.out.println(start[0]+"/"+start[1]+"/"+start[2]);
+//    	System.out.println((startFunds/stockData.getPrice("#", start)));
+//    	printDate();
+    	return (fit+stockValue)-(marketPerformance-startFunds);
     }
     
     public void print(){

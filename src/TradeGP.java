@@ -30,7 +30,7 @@ public class TradeGP extends GP {
         double totFit = 0;
         // test GP on N random boards
         for (int k=0; k<tcfg.NumTestTraders; k++) {
-            //create new random grid
+            //create new random traders
             tcfg.createTrader();
             
             //evaluate main tree for 80 steps of the dozer
