@@ -70,8 +70,8 @@ public class Trader {
     	date[0] = 2009;
 		date[1] = rgen.nextInt(3)+10;
 		date[2] = rgen.nextInt(30)+1;
-		date[1] = 11;
-		date[2] = 24;
+//		date[1] = 11;
+//		date[2] = 24;
     	start = date.clone();
     	startFunds = startingFunds;
     	funds = startingFunds;
@@ -80,7 +80,7 @@ public class Trader {
     
     public void buy(String stockName) throws InvalidBuyException{
     	float price = stockData.getPrice(stockName, date);
-    	if(price>funds || price==0){
+    	if(price>funds || price<=0){
     		//TODO should this just not do anything?
     		return;
 //    		throw new InvalidBuyException("Not enough funds to buy "+stockName);

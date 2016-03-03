@@ -120,10 +120,14 @@ public class StockData {
 	 * @throws IOException
 	 */
 	// Location of the data file
-	final String data_location = "C:/comps/StockTrading/src/sp500hst.txt";
-	final String netCapPath = "C:/comps/sandp/data/netCap.csv";
-	final String DPSPath = "C:/comps/sandp/data/DPS.csv";
-	final String financialDeptPath = "C:/comps/sandp/data/financialDept.csv";
+//	final String data_location = "C:/comps/StockTrading/src/sp500hst.txt";
+//	final String netCapPath = "C:/comps/sandp/data/netCap.csv";
+//	final String DPSPath = "C:/comps/sandp/data/DPS.csv";
+//	final String financialDeptPath = "C:/comps/sandp/data/financialDept.csv";
+	final String netCapPath = "/Users/Mullan/Desktop/EvoStocks/netCap.csv";
+	final String DPSPath = "/Users/Mullan/Desktop/EvoStocks/DPS.csv";
+	final String financialDeptPath = "/Users/Mullan/Desktop/EvoStocks/financialDept.csv";
+	final String data_location = "/Users/Mullan/Dropbox/workspace/EvoStocks/src/sp500hst.txt";
 	public StockData() throws NumberFormatException, IOException{
 		Path path = Paths.get(data_location);
 		stocks = new HashMap<String, Stock>();
@@ -610,7 +614,9 @@ public class StockData {
 	 * @return
 	 */
 	public Set<String> getStockSet(){
-		return stocks.keySet();
+		Set<String> returner = stocks.keySet();
+		returner.remove("#");
+		return returner;
 	}
 	
 //	public static void main(String[] args) throws NumberFormatException, IOException{
