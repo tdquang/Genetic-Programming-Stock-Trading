@@ -614,9 +614,7 @@ public class StockData {
 	 * @return
 	 */
 	public Set<String> getStockSet(){
-		Set<String> returner = stocks.keySet();
-		returner.remove("#");
-		return returner;
+		return stocks.keySet();
 	}
 	
 //	public static void main(String[] args) throws NumberFormatException, IOException{
