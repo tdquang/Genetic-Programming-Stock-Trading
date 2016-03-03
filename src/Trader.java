@@ -70,8 +70,8 @@ public class Trader {
     	date[0] = 2009;
 		date[1] = rgen.nextInt(3)+10;
 		date[2] = rgen.nextInt(30)+1;
-		date[1] = 11;
-		date[2] = 24;
+//		date[1] = 12;
+//		date[2] = 27;
     	start = date.clone();
     	startFunds = startingFunds;
     	funds = startingFunds;
@@ -80,7 +80,7 @@ public class Trader {
     
     public void buy(String stockName) throws InvalidBuyException{
     	float price = stockData.getPrice(stockName, date);
-    	if(price>funds || price==0){
+    	if(price>funds || price<=0){
     		//TODO should this just not do anything?
     		return;
 //    		throw new InvalidBuyException("Not enough funds to buy "+stockName);
@@ -193,12 +193,16 @@ public class Trader {
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
-    	float marketPerformance = (startFunds/stockData.getPrice("#", start))*stockData.getPrice("#", date);
+    	float marketPerformance = (startFunds/this.priceXDaysAgo("#", 0))*this.priceXDaysAgo("#", 0);
 //    	System.out.println(marketPerformance);
 //    	System.out.println(start[0]+"/"+start[1]+"/"+start[2]);
-//    	System.out.println((startFunds/stockData.getPrice("#", start)));
+//    	System.out.println(startFunds/this.priceXDaysAgo("#", 0));
 //    	printDate();
-    	return (fit+stockValue)-(marketPerformance-startFunds);
+    	marketPerformance = marketPerformance - startFunds;
+    	if(marketPerformance < 0) {
+    		return (fit+stockValue) + marketPerformance;
+    	}
+    	return (fit+stockValue)-marketPerformance;
     }
     
     public void print(){
