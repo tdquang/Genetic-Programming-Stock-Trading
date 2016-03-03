@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class Trader {
-	
+
 	//custom exceptions
 	@SuppressWarnings("serial")
 	public class InvalidSellException extends Exception{
@@ -20,18 +20,18 @@ public class Trader {
 			super(message);
 		}
 	}
-	
+
     //functions and terminals
     public final static int ZERO = 0;
-    public final static int ONE = 1; 
-    public final static int TWO = 2; 
-    public final static int INC = 3;  
-    public final static int DEC = 4;  
-    public final static int ADD = 5;  
-    public final static int SUB = 6;  
-    public final static int MAX = 7;  
-    public final static int MIN = 8;  
-    public final static int ITE = 9; 
+    public final static int ONE = 1;
+    public final static int TWO = 2;
+    public final static int INC = 3;
+    public final static int DEC = 4;
+    public final static int ADD = 5;
+    public final static int SUB = 6;
+    public final static int MAX = 7;
+    public final static int MIN = 8;
+    public final static int ITE = 9;
     public final static int RANDOM = 10;
     public final static int PRICE = 11;
     public final static int INVERT = 12;
@@ -52,7 +52,7 @@ public class Trader {
 	public static final int OPCASH = 27; //operating cashflow
 	public static final int FREECASH = 28;
     public final static int NETCAP = 29;
-	
+
     //Trader private vars
     private Map<String, Integer> stocks;
     private Random rgen;
@@ -61,7 +61,7 @@ public class Trader {
     private float startFunds;
     private float funds;
     private StockData stockData;
-    
+
     public Trader(StockData data, float startingFunds){
 
     	stocks = new HashMap<String,Integer>();
@@ -70,6 +70,9 @@ public class Trader {
     	date[0] = 2009;
 		date[1] = rgen.nextInt(3)+10;
 		date[2] = rgen.nextInt(30)+1;
+//		date[1] = 11;
+//		date[2] = 24;
+
 //		date[1] = 12;
 //		date[2] = 27;
     	start = date.clone();
@@ -77,7 +80,7 @@ public class Trader {
     	funds = startingFunds;
     	stockData = data;
     }
-    
+
     public void buy(String stockName) throws InvalidBuyException{
     	float price = stockData.getPrice(stockName, date);
     	if(price>funds || price<=0){
@@ -107,22 +110,22 @@ public class Trader {
     	}
     	funds+=price;
     }
-    
+
     public float getQuarterlyData(String stockName, int type){
     	return stockData.getQuarterlyData(stockName, new int[]{date[0], date[1]}, type);
     }
-    
+
     public float getNetCap(String stockName){
     	return stockData.getNetCap(stockName, new int[]{date[0],date[1]});
     }
-    
+
     public float priceXDaysAgo(String stockName, int days){
     	int[] historyDate = date.clone();
     	for(int i = days; i>0; i--){
         	do{
 //        		System.out.println(stockName+": "+historyDate[0]+"/"+historyDate[1]+"/"+historyDate[2]);
         		historyDate[2]-=1;
-        		
+
     	    	if(historyDate[2]<=0){
     	    		historyDate[1]-=1;
     	    		historyDate[2]=31;
@@ -148,9 +151,9 @@ public class Trader {
         	}while(stockData.getPrice(stockName, historyDate)==-1);
     	}
     	return stockData.getPrice(stockName, historyDate);
-    	
+
     }
-    
+
     public float getAvgPrice(String stockName, int numDays){
     	int[] historyDate = date.clone();
     	float avg = stockData.getPrice(stockName, historyDate);
@@ -183,7 +186,7 @@ public class Trader {
         	avg+=stockData.getPrice(stockName, historyDate);
     	}
     	return avg/(numDays+1);
-    	
+
     }
     public float calcFitness(){
     	float fit = funds-startFunds;
@@ -194,6 +197,7 @@ public class Trader {
     	}
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	float marketPerformance = (startFunds/this.priceXDaysAgo("#", 0))*this.priceXDaysAgo("#", 0);
+    	
 //    	System.out.println(marketPerformance);
 //    	System.out.println(start[0]+"/"+start[1]+"/"+start[2]);
 //    	System.out.println(startFunds/this.priceXDaysAgo("#", 0));
@@ -204,11 +208,11 @@ public class Trader {
     	}
     	return (fit+stockValue)-marketPerformance;
     }
-    
+
     public void print(){
     	print(System.out);
     }
-    
+
     public void print(PrintStream os){
     	os.println("Date: "+date[0]+"/"+date[1]+"/"+date[2]);
     	os.println("Funds: "+funds);
@@ -217,7 +221,7 @@ public class Trader {
     	}
     	os.println();
     }
-    
+
     /**
      * Increments the date variable to the day when stocks were traded. Uses the stock "A" as a guide.
      */
@@ -248,14 +252,17 @@ public class Trader {
     	}while(stockData.getPrice(stockName, tomorrow)==-1);
     	date = tomorrow;
     }
-    
-    public void printDate(){
-    	System.out.println(date[0]+"/"+date[1]+"/"+date[2]);
+
+    public String getDate(){
+    	return date[0]+"/"+date[1]+"/"+date[2];
     }
-    
+    public String getStartDate(){
+    	return start[0]+"/"+start[1]+"/"+start[2];
+    }
+
 	public static void main(String[] args) throws NumberFormatException, IOException, InvalidBuyException, InvalidSellException {
 		// TODO Auto-generated method stub
-		
+
 		int startingFunds = 10000;
 		int numberOfTraders = 1;
 		float[] fitnessList = new float[numberOfTraders];
@@ -286,7 +293,7 @@ public class Trader {
 			}
 			fitnessList[i] = trader.calcFitness();
 		}
-		
+
 		float sum = 0;
 		float best = 1*startingFunds;
 		for(float fit : fitnessList){
@@ -297,7 +304,7 @@ public class Trader {
 		}
 		System.out.println("Average fitness: "+sum/numberOfTraders);
 		System.out.println("Best fitness: "+(float)(Math.round(best*1000)/1000.0));
-		
+
 	}
 
 }

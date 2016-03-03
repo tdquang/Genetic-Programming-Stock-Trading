@@ -37,6 +37,7 @@ public class TradeGP extends GP {
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
             	for(String stock : tcfg.data.getStockSet()){
+            		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
 	            		if(result>25) tcfg.trader.buy(stock);
@@ -86,12 +87,13 @@ public class TradeGP extends GP {
             //create new random grid
             tcfg.createTrader();
             os.println("\n---------------------------------");
-            os.println("DOZER BEHAVIOR ON TEST GRID "+j);
+            os.println("Trader Behavior on Market starting on "+tcfg.trader.getStartDate());
             os.println("---------------------------------");
             //evaluate main tree for 80 steps of the dozer, printing grid after each move
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {          
             	for(String stock : tcfg.data.getStockSet()){
+            		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
             		try{
 	            		if(result>5) tcfg.trader.buy(stock);
