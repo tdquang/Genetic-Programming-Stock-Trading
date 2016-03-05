@@ -124,6 +124,9 @@ public class Trader {
 
     public float priceXDaysAgo(String stockName, int days){
     	int[] historyDate = date.clone();
+    	if(stockData.getPrice(stockName, historyDate)==-1){
+    		days = 1;
+    	}
     	for(int i = days; i>0; i--){
         	do{
 //        		System.out.println(stockName+": "+historyDate[0]+"/"+historyDate[1]+"/"+historyDate[2]);
