@@ -77,10 +77,11 @@ public class Trader {
 //		date[1] = 12;
 //		date[2] = 27;
     	start = date.clone();
-    	startFunds = startingFunds;
-    	startMarketValue = this.priceXDaysAgo("#",0);
     	funds = startingFunds;
     	stockData = data;
+    	startFunds = startingFunds;
+    	startMarketValue = this.priceXDaysAgo("#",0);
+
     }
 
     public void buy(String stockName) throws InvalidBuyException{
