@@ -53,7 +53,7 @@ public class TradeGP extends GP {
 //            		}
             		try{
             			if(result > 500) {
-            				for(int j=0; j < 5; j++) {
+            				for(int j=0; j < 10; j++) {
             					tcfg.trader.buy(stock);
             				}
             			}
