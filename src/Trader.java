@@ -195,12 +195,14 @@ public class Trader {
 
     }
     public float calcFitness(){
-    	float fit = funds-startFunds;
+//    	float fit = funds-startFunds;
     	float stockValue = 0;
     	for(String key : stocks.keySet()){
     		stockValue += (stockData.getPrice(key, date) * stocks.get(key));
 //    		System.out.println(key+" :: "+stockData.getPrice(key, date));
     	}
+    	
+    	/*
 //    	System.out.println(stockValue+" :: "+((float)funds-startFunds)+" :: "+date[0]+"/"+date[1]+"/"+date[2]+" :: "+start[0]+"/"+start[1]+"/"+start[2]);
     	float marketPerformance = (startFunds/startMarketValue)*this.priceXDaysAgo("#", 0);
     	
@@ -209,11 +211,12 @@ public class Trader {
 //    	System.out.println(startFunds/this.priceXDaysAgo("#", 0));
 //    	printDate();
     	marketPerformance = marketPerformance - startFunds;
-    	if(marketPerformance < 0) {
-    		return (fit+stockValue) + marketPerformance;
-    	}
     	
     	return (fit+stockValue)/marketPerformance;
+    	*/
+    	float marketPercent = this.priceXDaysAgo("#", 0)/startMarketValue;
+    	float traderPercent = (funds+stockValue)/startFunds;
+    	return traderPercent/marketPercent;
     }
 
     public void print(){
