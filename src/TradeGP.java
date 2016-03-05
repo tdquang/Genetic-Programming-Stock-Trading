@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.PrintStream;
+import java.lang.Math;
 
 import gpjpp.*;
 public class TradeGP extends GP {
@@ -28,20 +29,45 @@ public class TradeGP extends GP {
         TradeVariables tcfg = (TradeVariables)cfg;
 
         double totFit = 0;
+        
         // test GP on N random boards
         for (int k=0; k<tcfg.NumTestTraders; k++) {
             //create new random traders
             tcfg.createTrader();
-            
+//    		float maxFloat = -10000;
+//    		float minFloat = 10000;
             //evaluate main tree for 80 steps of the dozer
             //TODO determine actions based on output
             for (int i=0; i<tcfg.NumSteps; i++) {
             	for(String stock : tcfg.data.getStockSet()){
             		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
+            		if(result > 0) {
+            			result = (float) Math.log10(result);
+            		}
+//            		if(result > maxFloat) {
+//            			maxFloat = result;
+//            		}
+//            		if(result < minFloat) {
+//            			minFloat = result;
+//            		}
             		try{
-	            		if(result>50) tcfg.trader.buy(stock);
-	            		else if(result<-50) tcfg.trader.sell(stock);
+            			if(result > 2) {
+            				for(int j=0; j < 5; j++) {
+            					tcfg.trader.buy(stock);
+            				}
+            			}
+            			else if(result>1.5) {
+	            			tcfg.trader.buy(stock);
+	            		}
+            			else if(result < -100) {
+            				for(int j=0; j < 10; j++) {
+            					tcfg.trader.sell(stock);
+            				}
+            			}
+	            		else if(result<-50) {
+	            			tcfg.trader.sell(stock);
+	            		}
 	            		else continue;
             		} catch (Exception e){
             			e.printStackTrace();
@@ -51,6 +77,8 @@ public class TradeGP extends GP {
             	tcfg.trader.nextDay();
             }
             totFit += tcfg.trader.calcFitness();
+            //System.out.println(maxFloat + " : " + minFloat);
+            
         }
         totFit = totFit/tcfg.NumTestTraders;
         if (cfg.ComplexityAffectsFitness)
