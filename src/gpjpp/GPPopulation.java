@@ -1353,7 +1353,7 @@ public class GPPopulation extends GPContainer {
 
         int sumLength = 0;
         int sumDepth = 0;
-        int sumFit = 0;
+        double sumFit = 0;
 
 
         for (int i = 0; i < containerSize(); i++) {
@@ -1372,7 +1372,6 @@ public class GPPopulation extends GPContainer {
             sumDepth += current.depth();
 
             double curFitness = current.stdFitness;
-            //System.out.println(curFitness);
             sumFit += curFitness;
 
             if ((worstFitness > curFitness) ||
