@@ -1,11 +1,11 @@
-PopulationSize            = 20
+PopulationSize            = 50
 NumberOfGenerations       = 10
 CrossoverProbability      = 0.9
-CreationProbability       = 5.0
+CreationProbability       = 0.9
 CreationType              = RampedHalf
 MaximumDepthForCreation   = 6
-MaximumDepthForCrossover  = 17
-MaximumComplexity         = 150
+MaximumDepthForCrossover  = 10
+MaximumComplexity         = 10
 SelectionType             = Tournament
 TournamentSize            = 7
 DemeSize                  = 100
@@ -34,103 +34,872 @@ RPB:  inc(1) dec(1) add(2) sub(2) max(2) min(2) ite(4) invert(1) netcap free cas
 
 
 Run number 1
-Too complex 0
-Duplicate 0
+Too complex 84
+Duplicate 1
 
  Gen|              Fitness           |   Complexity    |    Depth   |Variety
     |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    717.96     219.35      -0.00|   2    8.2     4|  2  3.4   3| 1.000  
-   1|    724.22     415.25      -0.00|   2    7.6     3|  2  3.4   2| 0.400  
-   2|    859.62     610.50     367.89|   2    2.9     8|  2  2.4   5| 0.100  
-   3|    779.86     558.15       0.00|   2    2.0     3|  2  2.0   2| 0.100  
-   4|    766.39     618.55     129.94|   2    2.0     3|  2  2.0   2| 0.100  
-   5|    777.64     569.10     168.28|   2    2.0     2|  2  2.0   2| 0.050  
-   6|    812.06     565.85     405.03|   2    2.3     2|  2  2.2   2| 0.150  
-   7|    790.28     596.95     396.24|   2    2.0     2|  2  2.0   2| 0.050  
-   8|    872.10     560.35       0.00|   2    2.0     2|  2  2.0   2| 0.100  
-   9|    784.07     530.90     277.19|   2    2.0     2|  2  2.0   2| 0.050  
-  10|    806.08     542.45       0.00|   2    2.5    12|  2  2.2   6| 0.150  
+   0|      0.99       0.00       0.92|   3    5.5     8|  2  3.3   5| 1.000  
+   1|      1.00       0.02       0.93|   9    5.1     3|  5  3.1   2| 0.380  
+   2|      1.00       0.00       0.98|   3    7.1     3|  2  4.1   2| 0.140  
+   3|      1.00       0.00       0.98|   9    7.0     2|  5  4.1   2| 0.080  
+   4|      1.00       0.02       0.98|   9    7.9     3|  5  4.5   2| 0.100  
+   5|      1.00       0.00       0.95|   9    7.9     9|  5  4.5   5| 0.140  
+   6|      1.00       0.00       0.98|   8    8.1     8|  4  4.5   4| 0.060  
+   7|      1.00       0.00       0.98|   9    8.9     9|  5  4.9   5| 0.080  
+   8|      1.00       0.00       0.98|   9    9.0     9|  5  5.0   5| 0.060  
+   9|      1.00       0.00       0.99|   9    9.2    10|  5  5.2   6| 0.040  
+  10|      1.00       0.02       0.98|  10    9.2    10|  6  5.2   6| 0.040  
 
 ========================================================================
-Generation:10 best:11 worst:7
+Generation:10 best:9 worst:33
   GP#           dad           mum oper mut shrk mut    fitness  len  dep
 ===== ============= ============= ======== ======== ========== ==== ====
-B  11            12                                     806.08    2    2
+B   9            29                                       1.00   10    6
 
-RPB:  (dec two)
+RPB:  (inc (inc (dec (sub (add oper-cash avg1w) (add one zero)))))
 
 
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/29
----------------------------------
-Date: 2010/4/28
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
 
 ---------------------------------
-Trader Behavior on Market starting on 2009/12/8
+Trader Behavior on Market starting on 2009/12/20
 ---------------------------------
-Date: 2010/4/8
-Funds: 10000.0
+Date: 2010/4/20
+Funds: 0.92220044
+TER: 1
+IPG: 1
+SNDK: 1
+WYNN: 1
+DFS: 1
+QLGC: 1
+GLW: 1
+NOVL: 1
+BBT: 1
+HNZ: 1
+CPWR: 1
+BBY: 1
+WLP: 1
+GME: 1
+AA: 1
+HOG: 1
+MYL: 1
+#: 1
+CEG: 1
+HON: 1
+HOT: 1
+AN: 1
+WMB: 1
+BCR: 1
+SEE: 1
+DGX: 1
+EIX: 1
+XOM: 1
+LXK: 1
+BA: 1
+WMT: 1
+TGT: 1
+A: 1
+ABC: 1
+NDAQ: 1
+C: 1
+D: 1
+DHI: 1
+IRM: 1
+F: 1
+BDK: 1
+HPQ: 1
+BK: 1
+CFN: 1
+K: 1
+FLS: 1
+L: 1
+FLR: 1
+M: 1
+THC: 1
+DHR: 1
+FLIR: 1
+RDC: 1
+GNW: 1
+NTAP: 1
+Q: 1
+R: 1
+ABT: 1
+S: 1
+T: 1
+V: 1
+BDX: 1
+VLO: 1
+X: 1
+FMC: 1
+CA: 1
+CB: 1
+NVDA: 1
+CF: 1
+CI: 1
+CL: 1
+BEN: 1
+VMC: 1
+DIS: 1
+TIF: 1
+ACS: 1
+TIE: 1
+HRB: 1
+GPC: 1
+CTAS: 1
+FAST: 1
+AMZN: 1
+DD: 1
+CINF: 1
+DE: 1
+DF: 1
+SPLS: 1
+HRL: 1
+WFMI: 1
+ADI: 1
+CHK: 1
+BBBY: 1
+HRS: 1
+ITT: 1
+ADM: 1
+DO: 1
+GPS: 1
+ADP: 1
+ITW: 1
+WPI: 1
+DV: 1
+PBG: 1
+PBI: 1
+VNO: 1
+WPO: 1
+EMC: 1
+XRAY: 1
+ED: 1
+XRX: 1
+JWN: 1
+AEE: 1
+SHW: 1
+TJX: 1
+HSP: 1
+BRCM: 1
+EK: 1
+EL: 1
+EMN: 1
+HST: 1
+EMR: 1
+EP: 1
+AEP: 1
+AES: 1
+HSY: 1
+AET: 1
+YUM: 1
+SII: 1
+PCG: 1
+PCL: 1
+PCP: 1
+TLAB: 1
+FE: 1
+PCS: 1
+TROW: 1
+BHI: 1
+CSCO: 1
+FPL: 1
+AFL: 1
+FO: 1
+IVZ: 1
+UNH: 1
+MSFT: 1
+RHI: 1
+XTO: 1
+UNM: 1
+UNP: 1
+SJM: 1
+EOG: 1
+GD: 1
+GE: 1
+RHT: 1
+BIG: 1
+GOOG: 1
+HUM: 1
+AGN: 1
+GR: 1
+GS: 1
+GT: 1
+PEG: 1
+TMK: 1
+PAYX: 1
+TMO: 1
+DNB: 1
+PEP: 1
+CLF: 1
+HD: 1
+ISRG: 1
+YHOO: 1
+BF.B: 1
+SLB: 1
+DNR: 1
+BJS: 1
+FRX: 1
+SLE: 1
+CLX: 1
+PFE: 1
+PFG: 1
+SBUX: 1
+SLM: 1
+CMA: 1
+NBL: 1
+UPS: 1
+CME: 1
+ODP: 1
+CMI: 1
+AIG: 1
+NBR: 1
+EQR: 1
+IP: 1
+SIAL: 1
+CMS: 1
+EQT: 1
+JDSU: 1
+MBI: 1
 
-TRADER FITNESS = 0.0
+TRADER FITNESS = 0.9900632
 
 ---------------------------------
-Trader Behavior on Market starting on 2009/10/23
+Trader Behavior on Market starting on 2009/11/6
 ---------------------------------
-Date: 2010/3/1
-Funds: 10000.0
+Date: 2010/3/8
+Funds: 0.599455
+TER: 1
+IPG: 1
+SNDK: 1
+WYNN: 1
+DFS: 1
+QLGC: 1
+GLW: 1
+NOVL: 1
+BBT: 1
+HNZ: 1
+CPWR: 1
+BBY: 1
+WLP: 1
+GME: 1
+AA: 1
+HOG: 1
+MYL: 1
+#: 1
+CEG: 1
+HON: 1
+HOT: 1
+AN: 1
+WMB: 1
+BCR: 1
+SEE: 1
+DGX: 1
+EIX: 1
+XOM: 1
+LXK: 1
+BA: 1
+WMT: 1
+TGT: 1
+A: 1
+ABC: 1
+NDAQ: 1
+C: 1
+D: 1
+DHI: 1
+IRM: 1
+F: 1
+BDK: 1
+HPQ: 1
+BK: 1
+CFN: 1
+K: 1
+FLS: 1
+L: 1
+FLR: 1
+M: 1
+THC: 1
+DHR: 1
+FLIR: 1
+RDC: 1
+GNW: 1
+NTAP: 1
+Q: 1
+R: 1
+ABT: 1
+S: 1
+T: 1
+V: 1
+BDX: 1
+VLO: 1
+X: 1
+DYN: 1
+FMC: 1
+CA: 1
+CB: 1
+NVDA: 1
+CF: 1
+CI: 1
+CL: 1
+BEN: 1
+VMC: 1
+DIS: 1
+TIF: 1
+ACS: 1
+TIE: 1
+HRB: 1
+GPC: 1
+CTAS: 1
+FAST: 1
+AMZN: 1
+DD: 1
+CINF: 1
+DE: 1
+DF: 1
+SPLS: 1
+HRL: 1
+WFMI: 1
+ADI: 1
+CHK: 1
+BBBY: 1
+HRS: 1
+ITT: 1
+ADM: 1
+DO: 1
+GPS: 1
+ADP: 1
+ITW: 1
+WPI: 1
+DV: 1
+PBG: 1
+PBI: 1
+VNO: 1
+WPO: 1
+EMC: 1
+XRAY: 1
+ED: 1
+XRX: 1
+JWN: 1
+AEE: 1
+SHW: 1
+TJX: 1
+HSP: 1
+BRCM: 1
+EK: 1
+EL: 1
+EMN: 1
+HST: 1
+EMR: 1
+EP: 1
+AEP: 1
+AES: 1
+HSY: 1
+AET: 1
+YUM: 1
+SII: 1
+PCG: 1
+PCL: 1
+PCP: 1
+TLAB: 1
+FE: 1
+PCS: 1
+TROW: 1
+BHI: 1
+CSCO: 1
+FPL: 1
+AFL: 1
+FO: 1
+IVZ: 1
+UNH: 1
+MSFT: 1
+RHI: 1
+XTO: 1
+UNM: 1
+UNP: 1
+SJM: 1
+EOG: 1
+GD: 1
+GE: 1
+RHT: 1
+BIG: 1
+GOOG: 1
+HUM: 1
+AGN: 1
+GR: 1
+GS: 1
+GT: 1
+PEG: 1
+TMK: 1
+PAYX: 1
+TMO: 1
+DNB: 1
+PEP: 1
+CLF: 1
+HD: 1
+ISRG: 1
+YHOO: 1
+BF.B: 1
+SLB: 1
+DNR: 1
+BJS: 1
+FRX: 1
+SLE: 1
+CLX: 1
+PFE: 1
+PFG: 1
+SBUX: 1
+SLM: 1
+CMA: 1
+NBL: 1
+UPS: 1
+CME: 1
+ODP: 1
+CMI: 1
+AIG: 1
+NBR: 1
+EQR: 1
+IP: 1
+SIAL: 1
+CMS: 1
+EQT: 1
+DOV: 1
+DOW: 1
+AIV: 1
+AIZ: 1
+PGN: 1
+FTI: 1
+MCHP: 1
+PGR: 1
+JDSU: 1
+MAS: 1
+MAR: 1
+AMAT: 1
+MAT: 1
+PCAR: 1
+CELG: 1
+BLL: 1
+CNP: 1
+FTR: 1
+PDCO: 1
+PHM: 1
+MBI: 1
+ETFC: 1
 
-TRADER FITNESS = 0.0
+TRADER FITNESS = 1.0168549
 
 ---------------------------------
-Trader Behavior on Market starting on 2009/10/23
+Trader Behavior on Market starting on 2009/12/5
 ---------------------------------
-Date: 2010/3/1
-Funds: 10000.0
+Date: 2010/4/6
+Funds: 0.57460475
+TER: 1
+IPG: 1
+SNDK: 1
+WYNN: 1
+DFS: 1
+QLGC: 1
+GLW: 1
+NOVL: 1
+BBT: 1
+HNZ: 1
+CPWR: 1
+BBY: 1
+WLP: 1
+GME: 1
+AA: 1
+HOG: 1
+MYL: 1
+#: 1
+CEG: 1
+HON: 1
+HOT: 1
+AN: 1
+WMB: 1
+BCR: 1
+SEE: 1
+DGX: 1
+EIX: 1
+XOM: 1
+LXK: 1
+BA: 1
+WMT: 1
+TGT: 1
+A: 1
+ABC: 1
+NDAQ: 1
+C: 1
+D: 1
+DHI: 1
+IRM: 1
+F: 1
+BDK: 1
+HPQ: 1
+BK: 1
+CFN: 1
+K: 1
+FLS: 1
+L: 1
+FLR: 1
+M: 1
+THC: 1
+DHR: 1
+FLIR: 1
+RDC: 1
+GNW: 1
+NTAP: 1
+Q: 1
+R: 1
+ABT: 1
+S: 1
+T: 1
+V: 1
+BDX: 1
+VLO: 1
+X: 1
+FMC: 1
+CA: 1
+CB: 1
+NVDA: 1
+CF: 1
+CI: 1
+CL: 1
+BEN: 1
+VMC: 1
+DIS: 1
+TIF: 1
+ACS: 1
+TIE: 1
+HRB: 1
+GPC: 1
+CTAS: 1
+FAST: 1
+AMZN: 1
+DD: 1
+CINF: 1
+DE: 1
+DF: 1
+SPLS: 1
+HRL: 1
+WFMI: 1
+ADI: 1
+CHK: 1
+BBBY: 1
+HRS: 1
+ITT: 1
+ADM: 1
+DO: 1
+GPS: 1
+ADP: 1
+ITW: 1
+WPI: 1
+DV: 1
+PBG: 1
+PBI: 1
+VNO: 1
+WPO: 1
+EMC: 1
+XRAY: 1
+ED: 1
+XRX: 1
+JWN: 1
+AEE: 1
+SHW: 1
+TJX: 1
+HSP: 1
+BRCM: 1
+EK: 1
+EL: 1
+EMN: 1
+HST: 1
+EMR: 1
+EP: 1
+AEP: 1
+AES: 1
+HSY: 1
+AET: 1
+YUM: 1
+SII: 1
+PCG: 1
+PCL: 1
+PCP: 1
+TLAB: 1
+FE: 1
+PCS: 1
+TROW: 1
+BHI: 1
+CSCO: 1
+FPL: 1
+AFL: 1
+FO: 1
+IVZ: 1
+UNH: 1
+MSFT: 1
+RHI: 1
+XTO: 1
+UNM: 1
+UNP: 1
+SJM: 1
+EOG: 1
+GD: 1
+GE: 1
+RHT: 1
+BIG: 1
+GOOG: 1
+HUM: 1
+AGN: 1
+GR: 1
+GS: 1
+GT: 1
+PEG: 1
+TMK: 1
+PAYX: 1
+TMO: 1
+DNB: 1
+PEP: 1
+CLF: 1
+HD: 1
+ISRG: 1
+YHOO: 1
+BF.B: 1
+SLB: 1
+DNR: 1
+BJS: 1
+FRX: 1
+SLE: 1
+CLX: 1
+PFE: 1
+PFG: 1
+SBUX: 1
+SLM: 1
+CMA: 1
+NBL: 1
+UPS: 1
+CME: 1
+ODP: 1
+CMI: 1
+AIG: 1
+NBR: 1
+EQR: 1
+IP: 1
+SIAL: 1
+CMS: 1
+EQT: 1
+DOV: 1
+DOW: 1
+AIV: 1
+AIZ: 1
+PGN: 1
+FTI: 1
+JDSU: 1
+MBI: 1
 
-TRADER FITNESS = 0.0
+TRADER FITNESS = 1.0116967
 
 ---------------------------------
-Trader Behavior on Market starting on 2009/12/24
+Trader Behavior on Market starting on 2009/11/15
 ---------------------------------
-Date: 2010/4/26
-Funds: 10000.0
+Date: 2010/3/15
+Funds: 0.25715268
+TER: 1
+IPG: 1
+SNDK: 1
+WYNN: 1
+DFS: 1
+QLGC: 1
+GLW: 1
+NOVL: 1
+BBT: 1
+HNZ: 1
+CPWR: 1
+BBY: 1
+WLP: 1
+GME: 1
+AA: 1
+HOG: 1
+MYL: 1
+#: 1
+CEG: 1
+HON: 1
+HOT: 1
+AN: 1
+WMB: 1
+BCR: 1
+SEE: 1
+DGX: 1
+EIX: 1
+XOM: 1
+LXK: 1
+BA: 1
+WMT: 1
+TGT: 1
+A: 1
+ABC: 1
+NDAQ: 1
+C: 1
+D: 1
+DHI: 1
+IRM: 1
+F: 1
+BDK: 1
+HPQ: 1
+BK: 1
+CFN: 1
+K: 1
+FLS: 1
+L: 1
+FLR: 1
+M: 1
+THC: 1
+DHR: 1
+FLIR: 1
+RDC: 1
+GNW: 1
+NTAP: 1
+Q: 1
+R: 1
+ABT: 1
+S: 1
+T: 1
+V: 1
+BDX: 1
+VLO: 1
+X: 1
+FMC: 1
+CA: 1
+CB: 1
+NVDA: 1
+CF: 1
+CI: 1
+CL: 1
+BEN: 1
+VMC: 1
+DIS: 1
+TIF: 1
+ACS: 1
+TIE: 1
+HRB: 1
+GPC: 1
+CTAS: 1
+FAST: 1
+AMZN: 1
+DD: 1
+CINF: 1
+DE: 1
+DF: 1
+SPLS: 1
+HRL: 1
+WFMI: 1
+ADI: 1
+CHK: 1
+BBBY: 1
+HRS: 1
+ITT: 1
+ADM: 1
+DO: 1
+GPS: 1
+ADP: 1
+ITW: 1
+WPI: 1
+DV: 1
+PBG: 1
+PBI: 1
+VNO: 1
+WPO: 1
+EMC: 1
+XRAY: 1
+ED: 1
+XRX: 1
+JWN: 1
+AEE: 1
+SHW: 1
+TJX: 1
+HSP: 1
+BRCM: 1
+EK: 1
+EL: 1
+EMN: 1
+HST: 1
+EMR: 1
+EP: 1
+AEP: 1
+AES: 1
+HSY: 1
+AET: 1
+YUM: 1
+SII: 1
+PCG: 1
+PCL: 1
+PCP: 1
+TLAB: 1
+FE: 1
+PCS: 1
+TROW: 1
+BHI: 1
+CSCO: 1
+FPL: 1
+AFL: 1
+FO: 1
+IVZ: 1
+UNH: 1
+MSFT: 1
+RHI: 1
+XTO: 1
+UNM: 1
+UNP: 1
+SJM: 1
+EOG: 1
+GD: 1
+GE: 1
+RHT: 1
+BIG: 1
+GOOG: 1
+HUM: 1
+AGN: 1
+GR: 1
+GS: 1
+GT: 1
+PEG: 1
+TMK: 1
+PAYX: 1
+TMO: 1
+DNB: 1
+PEP: 1
+CLF: 1
+HD: 1
+ISRG: 1
+YHOO: 1
+BF.B: 1
+SLB: 1
+DNR: 1
+BJS: 1
+FRX: 1
+SLE: 1
+CLX: 1
+PFE: 1
+PFG: 1
+SBUX: 1
+SLM: 1
+CMA: 1
+NBL: 1
+UPS: 1
+CME: 1
+ODP: 1
+CMI: 1
+AIG: 1
+NBR: 1
+EQR: 1
+IP: 1
+SIAL: 1
+CMS: 1
+EQT: 1
+DOV: 1
+DOW: 1
+AIV: 1
+AIZ: 1
+PGN: 1
+MBI: 1
+ETFC: 1
 
-TRADER FITNESS = 0.0
-FINAL FITNESS = 0.0
-Run time 30.97 seconds, 2.32 seconds/generation
-
-
-Run number 2
-Too complex 0
-Duplicate 0
-
- Gen|              Fitness           |   Complexity    |    Depth   |Variety
-    |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    773.56      81.00      -0.00|  16   12.4     5|  5  3.4   4| 1.000  
-   1|    867.97     265.95      -0.00|  16    4.8     2|  5  2.8   2| 0.450  
-   2|    784.73     549.65     285.29|  16    9.7     2|  5  3.6   2| 0.150  
-   3|    880.22     543.50     159.34|  16   13.9    16|  5  4.6   5| 0.250  
-   4|    797.06     604.55     359.50|  16   15.0    16|  5  4.8   5| 0.150  
-   5|    788.00     556.20     407.04|  16   16.0    16|  5  5.0   5| 0.050  
-   6|    789.15     573.85     231.80|  16   15.6    16|  5  5.0   5| 0.100  
-   7|    844.50     610.65     330.55|  16   15.2    16|  5  4.9   5| 0.100  
-   8|    706.11     532.20       0.00|  16   14.6     5|  5  4.8   3| 0.150  
-   9|    783.21     592.40     436.48|  16   15.9    16|  5  5.0   5| 0.100  
-  10|    777.63     576.45       0.00|  16   15.9    14|  5  5.0   5| 0.100  
-
-========================================================================
-Generation:10 best:11 worst:3
-  GP#           dad           mum oper mut shrk mut    fitness  len  dep
-===== ============= ============= ======== ======== ========== ==== ====
-B  11            11                                     777.63   16    5
-
-RPB:  (inc (sub (sub (add oper-cash two) (add netf rev)) (max (add rev oper-cash) (min netf netcap))))
-
-
+TRADER FITNESS = 0.9899684
 
 ---------------------------------
 Trader Behavior on Market starting on 2009/10/8
@@ -355,1826 +1124,19 @@ VTR: 1
 ETFC: 2
 AMD: 1
 
-TRADER FITNESS = 160.43848
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/9
----------------------------------
-Date: 2010/3/9
-Funds: 0.5699892
-TER: 1
-IPG: 1
-SNDK: 1
-WYNN: 1
-DFS: 1
-QLGC: 1
-GLW: 1
-NOVL: 1
-BBT: 1
-HNZ: 1
-CPWR: 1
-BBY: 1
-WLP: 1
-GME: 1
-AA: 1
-HOG: 1
-MYL: 1
-#: 1
-CEG: 1
-HON: 1
-HOT: 1
-AN: 1
-WMB: 1
-BCR: 1
-SEE: 1
-DGX: 1
-EIX: 1
-XOM: 1
-LXK: 1
-BA: 1
-WMT: 1
-TGT: 1
-A: 1
-ABC: 1
-NDAQ: 1
-C: 1
-D: 1
-DHI: 1
-IRM: 1
-F: 1
-BDK: 1
-HPQ: 1
-BK: 1
-CFN: 1
-K: 1
-FLS: 1
-L: 1
-FLR: 1
-M: 1
-THC: 1
-DHR: 1
-FLIR: 1
-RDC: 1
-GNW: 1
-NTAP: 1
-Q: 1
-R: 1
-ABT: 1
-S: 1
-T: 1
-V: 1
-BDX: 1
-VLO: 1
-X: 1
-FMC: 1
-CA: 1
-CB: 1
-NVDA: 1
-CF: 1
-CI: 1
-CL: 1
-BEN: 1
-VMC: 1
-DIS: 1
-TIF: 1
-ACS: 1
-TIE: 1
-HRB: 1
-GPC: 1
-CTAS: 1
-FAST: 1
-AMZN: 1
-DD: 1
-CINF: 1
-DE: 1
-DF: 1
-SPLS: 1
-HRL: 1
-WFMI: 1
-ADI: 1
-CHK: 1
-BBBY: 1
-HRS: 1
-ITT: 1
-ADM: 1
-DO: 1
-GPS: 1
-ADP: 1
-ITW: 1
-WPI: 1
-DV: 1
-PBG: 1
-PBI: 1
-VNO: 1
-WPO: 1
-EMC: 1
-XRAY: 1
-ED: 1
-XRX: 1
-JWN: 1
-AEE: 1
-SHW: 1
-TJX: 1
-HSP: 1
-BRCM: 1
-EK: 1
-EL: 1
-EMN: 1
-HST: 1
-EMR: 1
-EP: 1
-AEP: 1
-AES: 1
-HSY: 1
-AET: 1
-YUM: 1
-SII: 1
-PCG: 1
-PCL: 1
-PCP: 1
-TLAB: 1
-FE: 1
-PCS: 1
-TROW: 1
-BHI: 1
-CSCO: 1
-FPL: 1
-AFL: 1
-FO: 1
-IVZ: 1
-UNH: 1
-MSFT: 1
-RHI: 1
-XTO: 1
-UNM: 1
-UNP: 1
-SJM: 1
-EOG: 1
-GD: 1
-GE: 1
-RHT: 1
-BIG: 1
-GOOG: 1
-HUM: 1
-AGN: 1
-GR: 1
-GS: 1
-GT: 1
-PEG: 1
-TMK: 1
-PAYX: 1
-TMO: 1
-DNB: 1
-PEP: 1
-CLF: 1
-HD: 1
-ISRG: 1
-YHOO: 1
-BF.B: 1
-SLB: 1
-DNR: 1
-BJS: 1
-FRX: 1
-SLE: 1
-CLX: 1
-PFE: 1
-PFG: 1
-SBUX: 1
-SLM: 1
-CMA: 1
-NBL: 1
-UPS: 1
-CME: 1
-ODP: 1
-CMI: 1
-AIG: 1
-NBR: 1
-EQR: 1
-IP: 1
-SIAL: 1
-CMS: 1
-EQT: 1
-DOV: 1
-DOW: 1
-AIV: 1
-AIZ: 1
-PGN: 1
-FTI: 1
-MCHP: 1
-PGR: 1
-JDSU: 1
-MAS: 1
-MAR: 1
-AMAT: 1
-MBI: 1
-
-TRADER FITNESS = 584.31934
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/17
----------------------------------
-Date: 2010/3/17
-Funds: 0.04068637
-TER: 1
-IPG: 1
-SNDK: 1
-WYNN: 1
-DFS: 1
-QLGC: 1
-GLW: 1
-NOVL: 1
-BBT: 1
-HNZ: 1
-CPWR: 1
-BBY: 1
-WLP: 1
-GME: 1
-AA: 1
-HOG: 1
-MYL: 1
-#: 1
-CEG: 1
-HON: 1
-HOT: 1
-AN: 1
-WMB: 1
-BCR: 1
-SEE: 1
-DGX: 1
-EIX: 1
-XOM: 1
-LXK: 1
-BA: 1
-WMT: 1
-TGT: 1
-A: 1
-ABC: 1
-NDAQ: 1
-C: 1
-D: 1
-DHI: 1
-IRM: 1
-F: 1
-BDK: 1
-HPQ: 1
-BK: 1
-CFN: 1
-K: 1
-FLS: 1
-L: 1
-FLR: 1
-M: 1
-THC: 1
-DHR: 1
-FLIR: 1
-RDC: 1
-GNW: 1
-NTAP: 1
-Q: 1
-R: 1
-ABT: 1
-S: 1
-T: 1
-V: 1
-BDX: 1
-VLO: 1
-X: 1
-FMC: 1
-CA: 1
-CB: 1
-NVDA: 1
-CF: 1
-CI: 1
-CL: 1
-BEN: 1
-VMC: 1
-DIS: 1
-TIF: 1
-ACS: 1
-TIE: 1
-HRB: 1
-GPC: 1
-CTAS: 1
-FAST: 1
-AMZN: 1
-DD: 1
-CINF: 1
-DE: 1
-DF: 1
-SPLS: 1
-HRL: 1
-WFMI: 1
-ADI: 1
-CHK: 1
-BBBY: 1
-HRS: 1
-ITT: 1
-ADM: 1
-DO: 1
-GPS: 1
-ADP: 1
-ITW: 1
-WPI: 1
-DV: 1
-PBG: 1
-PBI: 1
-VNO: 1
-WPO: 1
-EMC: 1
-XRAY: 1
-ED: 1
-XRX: 1
-JWN: 1
-AEE: 1
-SHW: 1
-TJX: 1
-HSP: 1
-BRCM: 1
-EK: 1
-EL: 1
-EMN: 1
-HST: 1
-EMR: 1
-EP: 1
-AEP: 1
-AES: 1
-HSY: 1
-AET: 1
-YUM: 1
-SII: 1
-PCG: 1
-PCL: 1
-PCP: 1
-TLAB: 1
-FE: 1
-PCS: 1
-TROW: 1
-BHI: 1
-CSCO: 1
-FPL: 1
-AFL: 1
-FO: 1
-IVZ: 1
-UNH: 1
-MSFT: 1
-RHI: 1
-XTO: 1
-UNM: 1
-UNP: 1
-SJM: 1
-EOG: 1
-GD: 1
-GE: 1
-RHT: 1
-BIG: 1
-GOOG: 1
-HUM: 1
-AGN: 1
-GR: 1
-GS: 1
-GT: 1
-PEG: 1
-TMK: 1
-PAYX: 1
-TMO: 1
-DNB: 1
-PEP: 1
-CLF: 1
-HD: 1
-ISRG: 1
-YHOO: 1
-BF.B: 1
-SLB: 1
-DNR: 1
-BJS: 1
-FRX: 1
-SLE: 1
-CLX: 1
-PFE: 1
-PFG: 1
-SBUX: 1
-SLM: 1
-CMA: 1
-NBL: 1
-UPS: 1
-CME: 1
-ODP: 1
-CMI: 1
-AIG: 1
-NBR: 1
-EQR: 1
-IP: 1
-SIAL: 1
-CMS: 1
-EQT: 1
-DOV: 1
-DOW: 1
-AIV: 1
-AIZ: 1
-PGN: 1
-JDSU: 1
-ETFC: 1
-
-TRADER FITNESS = 564.4795
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/6
----------------------------------
-Date: 2010/2/9
-Funds: 1.0314837
-TER: 1
-IPG: 1
-SNDK: 1
-WYNN: 1
-DFS: 1
-QLGC: 1
-GLW: 1
-NOVL: 1
-BBT: 1
-HNZ: 1
-CPWR: 1
-BBY: 1
-WLP: 1
-GME: 1
-AA: 1
-HOG: 1
-MYL: 1
-#: 1
-CEG: 1
-HON: 1
-HOT: 1
-AN: 1
-WMB: 1
-BCR: 1
-SEE: 1
-DGX: 1
-EIX: 1
-XOM: 1
-LXK: 1
-BA: 1
-WMT: 1
-TGT: 1
-A: 1
-ABC: 1
-NDAQ: 1
-C: 1
-D: 1
-DHI: 1
-IRM: 1
-F: 1
-BDK: 1
-HPQ: 1
-BK: 1
-K: 1
-FLS: 1
-L: 1
-FLR: 1
-M: 1
-THC: 1
-DHR: 1
-FLIR: 1
-RDC: 1
-GNW: 1
-NTAP: 1
-Q: 1
-R: 1
-ABT: 1
-S: 1
-T: 1
-BDX: 1
-VLO: 1
-X: 1
-CA: 1
-CB: 1
-NVDA: 1
-CF: 1
-CI: 1
-CL: 1
-BEN: 1
-VMC: 1
-DIS: 1
-TIF: 1
-ACS: 1
-TIE: 1
-HRB: 1
-GPC: 1
-CTAS: 1
-FAST: 1
-SGP: 1
-AMZN: 1
-DD: 1
-CINF: 1
-DE: 1
-DF: 1
-SPLS: 1
-HRL: 1
-WFMI: 1
-ADI: 1
-CHK: 1
-BBBY: 1
-HRS: 1
-ITT: 1
-ADM: 1
-DO: 1
-GPS: 1
-ADP: 1
-ITW: 1
-WPI: 1
-DV: 1
-PBG: 1
-PBI: 1
-VNO: 1
-WPO: 1
-EMC: 1
-XRAY: 1
-ED: 1
-XRX: 1
-JWN: 1
-AEE: 1
-SHW: 1
-TJX: 1
-HSP: 1
-BRCM: 1
-EK: 1
-EL: 1
-EMN: 1
-HST: 1
-EMR: 1
-EP: 1
-AEP: 1
-AES: 1
-HSY: 1
-AET: 1
-YUM: 1
-SII: 1
-PCG: 1
-PCL: 1
-PCP: 1
-TLAB: 1
-FE: 1
-PCS: 1
-TROW: 1
-BHI: 1
-CSCO: 1
-FPL: 1
-AFL: 1
-FO: 1
-IVZ: 1
-UNH: 1
-MSFT: 1
-RHI: 1
-XTO: 1
-UNM: 1
-UNP: 1
-SJM: 1
-EOG: 1
-GD: 1
-GE: 1
-RHT: 1
-BIG: 1
-GOOG: 1
-HUM: 1
-AGN: 1
-GR: 1
-GS: 1
-GT: 1
-PEG: 1
-TMK: 1
-PAYX: 1
-TMO: 1
-DNB: 1
-PEP: 1
-HD: 1
-ISRG: 1
-YHOO: 1
-BF.B: 1
-SLB: 1
-DNR: 1
-BJS: 1
-FRX: 1
-SLE: 1
-CLX: 1
-PFE: 1
-PFG: 1
-SBUX: 1
-SLM: 1
-CMA: 1
-NBL: 1
-UPS: 1
-CME: 1
-ODP: 1
-CMI: 1
-AIG: 1
-NBR: 1
-EQR: 1
-IP: 1
-SIAL: 1
-CMS: 1
-EQT: 1
-DOV: 1
-DOW: 1
-AIV: 1
-AIZ: 1
-PGN: 1
-FTI: 1
-MCHP: 1
-PGR: 1
-JDSU: 1
-MAS: 1
-MAR: 1
-AMAT: 1
-MAT: 1
-PCAR: 1
-CELG: 1
-BLL: 1
-CNP: 1
-FTR: 1
-PDCO: 1
-DPS: 1
-SNA: 1
-CNX: 1
-SNI: 1
-PHM: 1
-MBI: 1
-VTR: 1
-BMC: 1
-COG: 1
-COF: 1
-KG: 1
-ETFC: 1
-AMD: 1
-MI: 1
-
-TRADER FITNESS = 228.23438
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/27
----------------------------------
-Date: 2010/3/3
-Funds: 1.329372
-TER: 1
-IPG: 1
-SNDK: 1
-WYNN: 1
-DFS: 1
-QLGC: 1
-GLW: 1
-NOVL: 1
-BBT: 1
-HNZ: 1
-CPWR: 1
-BBY: 1
-WLP: 1
-GME: 1
-AA: 1
-HOG: 1
-MYL: 1
-#: 1
-CEG: 1
-HON: 1
-HOT: 1
-AN: 1
-WMB: 1
-BCR: 1
-SEE: 1
-DGX: 1
-EIX: 1
-XOM: 1
-LXK: 1
-BA: 1
-WMT: 1
-TGT: 1
-A: 1
-ABC: 1
-NDAQ: 1
-C: 1
-D: 1
-DHI: 1
-IRM: 1
-F: 1
-BDK: 1
-HPQ: 1
-BK: 1
-K: 1
-FLS: 1
-L: 1
-FLR: 1
-M: 1
-THC: 1
-DHR: 1
-FLIR: 1
-RDC: 1
-GNW: 1
-NTAP: 1
-Q: 1
-R: 1
-ABT: 1
-S: 1
-T: 1
-BDX: 1
-VLO: 1
-X: 1
-CA: 1
-CB: 1
-NVDA: 1
-CF: 1
-CI: 1
-CL: 1
-BEN: 1
-VMC: 1
-DIS: 1
-TIF: 1
-ACS: 1
-TIE: 1
-HRB: 1
-GPC: 1
-CTAS: 1
-FAST: 1
-SGP: 1
-AMZN: 1
-DD: 1
-CINF: 1
-DE: 1
-DF: 1
-SPLS: 1
-HRL: 1
-WFMI: 1
-ADI: 1
-CHK: 1
-BBBY: 1
-HRS: 1
-ITT: 1
-ADM: 1
-DO: 1
-GPS: 1
-ADP: 1
-ITW: 1
-WPI: 1
-DV: 1
-PBG: 1
-PBI: 1
-VNO: 1
-WPO: 1
-EMC: 1
-XRAY: 1
-ED: 1
-XRX: 1
-JWN: 1
-AEE: 1
-SHW: 1
-TJX: 1
-HSP: 1
-BRCM: 1
-EK: 1
-EL: 1
-EMN: 1
-HST: 1
-EMR: 1
-EP: 1
-AEP: 1
-AES: 1
-HSY: 1
-AET: 1
-YUM: 1
-SII: 1
-PCG: 1
-PCL: 1
-PCP: 1
-TLAB: 1
-FE: 1
-PCS: 1
-TROW: 1
-BHI: 1
-CSCO: 1
-FPL: 1
-AFL: 1
-FO: 1
-IVZ: 1
-UNH: 1
-MSFT: 1
-RHI: 1
-XTO: 1
-UNM: 1
-UNP: 1
-SJM: 1
-EOG: 1
-GD: 1
-GE: 1
-RHT: 1
-BIG: 1
-GOOG: 1
-HUM: 1
-AGN: 1
-GR: 1
-GS: 1
-GT: 1
-PEG: 1
-TMK: 1
-PAYX: 1
-TMO: 1
-DNB: 1
-PEP: 1
-HD: 1
-ISRG: 1
-YHOO: 1
-BF.B: 1
-SLB: 1
-DNR: 1
-BJS: 1
-FRX: 1
-SLE: 1
-CLX: 1
-PFE: 1
-PFG: 1
-SBUX: 1
-SLM: 1
-CMA: 1
-NBL: 1
-UPS: 1
-CME: 1
-ODP: 1
-CMI: 1
-AIG: 1
-NBR: 1
-EQR: 1
-IP: 1
-SIAL: 1
-CMS: 1
-EQT: 1
-DOV: 1
-DOW: 1
-AIV: 1
-AIZ: 1
-PGN: 1
-FTI: 1
-MCHP: 1
-PGR: 1
-JDSU: 1
-MAS: 1
-MAR: 1
-AMAT: 1
-MAT: 1
-PCAR: 1
-CELG: 1
-BLL: 1
-CNP: 1
-FTR: 1
-PDCO: 1
-DPS: 1
-SNA: 1
-CNX: 1
-SNI: 1
-PHM: 1
-MBI: 1
-BMC: 1
-ETFC: 1
-
-TRADER FITNESS = 598.54004
-FINAL FITNESS = 427.20234375
-Run time 28.81 seconds, 2.17 seconds/generation
+TRADER FITNESS = 1.0038059
+FINAL FITNESS = 1.0024778127670289
+Run time 81.39 seconds, 7.41 seconds/generation
 
 
-Run number 3
-Too complex 0
-Duplicate 0
+Run number 2
+Too complex 98
+Duplicate 1
 
  Gen|              Fitness           |   Complexity    |    Depth   |Variety
     |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    637.71     210.90   -1059.91|   5   14.4    12|  3  3.5   4| 1.000  
-   1|    729.97     496.85       0.00|   5    4.5     4|  3  2.6   3| 0.350  
-   2|    837.12     607.05     374.18|   5    4.5     2|  3  2.8   2| 0.200  
-   3|    792.13     529.55       0.00|   5    4.5     3|  3  2.8   2| 0.150  
-   4|    794.82     552.30      -0.00|   5    4.6     2|  3  2.8   2| 0.250  
-   5|    766.93     537.55       0.00|   5    5.0     5|  3  3.0   3| 0.150  
-   6|    764.21     565.80       0.00|   5    5.0     5|  3  3.0   3| 0.150  
-   7|    809.98     567.20       0.00|   5    5.3    11|  3  3.0   4| 0.100  
-   8|    815.67     587.75       0.00|   5    5.6    16|  3  3.1   5| 0.100  
-   9|    847.44     639.05     335.36|   5    5.0     5|  3  3.0   3| 0.050  
-  10|    789.95     480.00       0.00|   5    5.0     5|  3  3.0   2| 0.250  
-
-========================================================================
-Generation:10 best:9 worst:2
-  GP#           dad           mum oper mut shrk mut    fitness  len  dep
-===== ============= ============= ======== ======== ========== ==== ====
-B   9             7                                     789.95    5    3
-
-RPB:  (sub (dec two) (invert net-inc))
-
-
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/22
----------------------------------
-Date: 2010/4/22
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/27
----------------------------------
-Date: 2010/3/3
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/23
----------------------------------
-Date: 2010/3/1
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/14
----------------------------------
-Date: 2010/4/14
-Funds: 10000.0
-
-TRADER FITNESS = -9.765625E-4
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/3
----------------------------------
-Date: 2010/3/4
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-FINAL FITNESS = -1.953125E-4
-Run time 16.62 seconds, 1.08 seconds/generation
-
-
-Run number 4
-Too complex 0
-Duplicate 0
-
- Gen|              Fitness           |   Complexity    |    Depth   |Variety
-    |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    903.55     113.35   -1181.91|  24   15.6    50|  5  3.2   6| 1.000  
-   1|    992.24     561.25      -0.00|  24   14.0     3|  5  3.6   2| 0.350  
-   2|   1187.31     806.30       0.00|  24   20.7     2|  5  4.6   2| 0.150  
-   3|   1036.26     671.25      -0.00|  24   24.6    29|  5  5.0   5| 0.200  
-   4|   1063.20     759.40       0.00|  24   23.0     4|  5  4.9   3| 0.100  
-   5|    991.38     711.40     -62.57|  24   23.0     3|  5  4.8   2| 0.100  
-   6|   1076.20     726.55       0.00|  24   22.8     3|  5  4.8   2| 0.150  
-   7|   1069.08     777.80     514.61|  24   23.6    24|  5  5.0   5| 0.100  
-   8|   1130.24     857.20     378.56|  24   24.0    24|  5  5.0   5| 0.100  
-   9|   1146.25     673.75       0.00|  24   23.0    24|  5  5.0   5| 0.250  
-  10|   1000.09     766.35       0.00|  24   22.9     2|  5  4.8   2| 0.150  
-
-========================================================================
-Generation:10 best:16 worst:5
-  GP#           dad           mum oper mut shrk mut    fitness  len  dep
-===== ============= ============= ======== ======== ========== ==== ====
-B  16             7                                    1000.09   24    5
-
-RPB:  (sub (add (invert (add avg1w roe)) (inc (invert one))) (max (sub (ite roe netf netf oper-cash) (inc netf)) (add (sub free cash avg1w) (dec netcap))))
-
-
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/22
----------------------------------
-Date: 2010/3/22
-Funds: 1.1142282
-TER: 6
-JAVA: 6
-IPG: 6
-SNDK: 6
-RRD: 4
-YHOO: 6
-DNR: 6
-BJS: 6
-SLE: 6
-PFE: 6
-DFS: 6
-QLGC: 6
-GLW: 6
-NOVL: 6
-SLM: 6
-JBL: 6
-CPWR: 6
-STZ: 6
-ODP: 6
-NBR: 4
-AA: 6
-MYL: 6
-BSX: 6
-RSH: 6
-CMS: 6
-NSM: 6
-PWR: 6
-AN: 6
-WMB: 6
-AIV: 6
-POM: 6
-RF: 6
-CVG: 6
-PGR: 6
-JDSU: 6
-MAS: 6
-KEY: 6
-AMAT: 6
-MAT: 6
-NDAQ: 6
-C: 6
-DHI: 6
-CNP: 6
-FTR: 6
-F: 6
-M: 6
-THC: 6
-GNW: 6
-Q: 6
-FITB: 6
-TXT: 6
-SE: 6
-S: 6
-SVU: 6
-PHM: 6
-MBI: 6
-VLO: 6
-DYN: 6
-SYMC: 6
-KG: 6
-NVDA: 6
-WFR: 6
-ZION: 6
-AKS: 6
-NVLS: 3
-TIE: 6
-TE: 6
-INTC: 6
-HRB: 6
-SCHW: 5
-DF: 6
-HBAN: 6
-MOLX: 6
-ETFC: 7
-JNS: 6
-CIEN: 5
-MTW: 5
-AMD: 6
-EMC: 6
-MI: 6
-XRX: 6
-MO: 6
-NWL: 5
-LSI: 5
-HCBK: 6
-EK: 6
-HST: 6
-MU: 6
-EP: 6
-WYN: 6
-TSN: 6
-KIM: 6
-AES: 6
-PKI: 6
-TSO: 6
-TSS: 6
-SAI: 5
-NI: 6
-LTD: 5
-WIN: 5
-TLAB: 6
-PCS: 6
-PBCT: 6
-PLD: 6
-CBG: 5
-ERTS: 5
-FHN: 5
-KBH: 6
-UNM: 6
-CBS: 5
-DUK: 6
-GE: 6
-DELL: 6
-WU: 6
-AON: 1
-BAC: 5
-CCE: 5
-NYT: 5
-GCI: 6
-LUV: 5
-MWW: 5
-GT: 6
-LEG: 6
-NWSA: 6
-CMCSA: 6
-MOT: 6
-LEN: 6
-XL: 6
-IGT: 6
-ALTR: 4
-XEL: 6
-
-TRADER FITNESS = 1068.0049
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/22
----------------------------------
-Date: 2010/4/22
-Funds: 0.8342085
-TER: 6
-JAVA: 6
-IPG: 6
-YHOO: 6
-DNR: 6
-STI: 6
-BJS: 6
-SLE: 6
-PFE: 6
-DFS: 6
-QLGC: 6
-GLW: 6
-NOVL: 6
-SLM: 6
-JBL: 6
-CPWR: 6
-STZ: 6
-ODP: 6
-AA: 6
-MYL: 6
-BSX: 6
-RSH: 6
-CMS: 6
-NSM: 6
-AN: 6
-WMB: 3
-AIV: 6
-POM: 6
-RF: 6
-CVG: 3
-PGR: 6
-JDSU: 6
-MAS: 6
-KEY: 6
-AMAT: 6
-MAT: 6
-NDAQ: 6
-C: 6
-DHI: 6
-CNP: 6
-FTR: 6
-F: 6
-RX: 4
-M: 6
-THC: 6
-GNW: 6
-Q: 6
-FITB: 6
-TXT: 6
-SE: 6
-S: 6
-SVU: 6
-PHM: 6
-MBI: 3
-VLO: 6
-DYN: 3
-SYMC: 6
-KG: 6
-NVDA: 6
-WFR: 6
-ZION: 6
-KR: 6
-AKS: 2
-TIE: 6
-TE: 6
-INTC: 6
-HRB: 4
-SCHW: 6
-DF: 6
-HBAN: 6
-MOLX: 1
-GPS: 4
-ETFC: 6
-JNS: 6
-CIEN: 3
-MTW: 3
-AMD: 6
-EMC: 6
-MI: 6
-XRX: 6
-MO: 6
-NWL: 6
-LSI: 6
-HCBK: 6
-EK: 6
-HST: 6
-MU: 6
-EP: 6
-WYN: 6
-TSN: 6
-KIM: 6
-AES: 6
-PKI: 6
-TSO: 6
-TSS: 6
-SAI: 6
-NI: 6
-LTD: 6
-WIN: 6
-TLAB: 6
-PCS: 6
-PBCT: 6
-PLD: 6
-CBG: 6
-ERTS: 6
-FHN: 6
-KBH: 3
-UNM: 6
-CBS: 5
-DUK: 6
-GE: 6
-DELL: 6
-WU: 6
-BAC: 5
-CCE: 3
-NYT: 6
-GCI: 6
-LUV: 5
-MWW: 5
-GT: 6
-LEG: 6
-NWSA: 6
-CMCSA: 6
-MOT: 6
-LEN: 6
-XL: 6
-IGT: 6
-
-TRADER FITNESS = 1140.5654
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/29
----------------------------------
-Date: 2010/3/4
-Funds: 0.28448522
-TER: 6
-JAVA: 5
-IPG: 6
-RRD: 2
-YHOO: 5
-DNR: 5
-STI: 5
-BJS: 5
-SLE: 5
-PFE: 5
-DFS: 6
-QLGC: 5
-GLW: 6
-NOVL: 7
-SBUX: 5
-SLM: 5
-JBL: 5
-CPWR: 5
-STZ: 5
-ODP: 5
-AA: 6
-MYL: 6
-BSX: 5
-RSH: 5
-CMS: 5
-NSM: 5
-AN: 6
-WMB: 6
-AIV: 5
-POM: 5
-SEE: 4
-CVH: 3
-RF: 5
-CVG: 5
-LOW: 5
-ARG: 2
-PGR: 5
-JDSU: 5
-MAS: 5
-KEY: 5
-AMAT: 5
-MAT: 5
-NDAQ: 5
-C: 6
-DHI: 6
-CNP: 5
-FTR: 5
-F: 6
-RX: 5
-CFN: 5
-M: 6
-THC: 6
-MJN: 2
-GNW: 6
-Q: 6
-FITB: 5
-TXT: 5
-SE: 5
-S: 6
-SVU: 5
-PHM: 5
-MBI: 5
-V: 1
-VLO: 6
-DYN: 5
-SYMC: 5
-KG: 5
-FMC: 2
-NVDA: 5
-WFR: 6
-ZION: 5
-AKS: 5
-NVLS: 2
-TIE: 6
-TE: 5
-INTC: 5
-ROST: 2
-HRB: 6
-SCHW: 6
-DF: 6
-HBAN: 5
-MOLX: 5
-ETFC: 7
-JNS: 6
-CIEN: 6
-MTW: 6
-AMD: 5
-EMC: 6
-MI: 5
-XRX: 6
-MO: 5
-NWL: 6
-LSI: 6
-HCBK: 5
-EK: 6
-HST: 6
-MU: 5
-EP: 6
-WYN: 5
-TSN: 5
-KIM: 5
-AES: 5
-PKI: 5
-TSO: 5
-ROP: 2
-TSS: 5
-SAI: 6
-NI: 5
-LTD: 5
-WIN: 6
-TLAB: 5
-PCS: 6
-PBCT: 5
-PLD: 5
-CBG: 5
-ERTS: 5
-FHN: 5
-KBH: 5
-UNM: 5
-CBS: 5
-DUK: 5
-GE: 5
-DELL: 5
-WU: 5
-BAC: 5
-CCE: 5
-NYT: 5
-GCI: 5
-LUV: 5
-MWW: 5
-GT: 5
-LEG: 5
-NWSA: 5
-CMCSA: 5
-MOT: 5
-LEN: 5
-XL: 5
-IGT: 5
-ALTR: 5
-CLF: 3
-XEL: 5
-
-TRADER FITNESS = 524.00195
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/11
----------------------------------
-Date: 2010/4/13
-Funds: 1.3449125
-TER: 6
-JAVA: 6
-IPG: 6
-YHOO: 6
-DNR: 6
-BJS: 6
-SLE: 6
-PFE: 6
-DFS: 6
-QLGC: 6
-GLW: 6
-NOVL: 6
-SLM: 6
-JBL: 6
-CPWR: 6
-STZ: 6
-ODP: 6
-NBR: 5
-AA: 6
-MYL: 6
-BSX: 6
-RSH: 6
-CMS: 6
-NSM: 5
-PWR: 5
-AN: 6
-WMB: 6
-AIV: 6
-POM: 6
-RF: 6
-CVG: 6
-PGR: 6
-JDSU: 6
-MAS: 6
-KEY: 6
-AMAT: 6
-MAT: 6
-NDAQ: 6
-C: 6
-DHI: 6
-CNP: 6
-FTR: 6
-F: 6
-RX: 5
-M: 6
-THC: 6
-GNW: 6
-Q: 6
-FITB: 6
-TXT: 6
-SE: 6
-S: 6
-SVU: 6
-PHM: 6
-MBI: 6
-VLO: 6
-DYN: 6
-SYMC: 6
-KG: 6
-NVDA: 6
-WFR: 5
-ZION: 6
-KR: 6
-AKS: 6
-TIE: 6
-TE: 6
-INTC: 6
-HRB: 6
-SCHW: 5
-DF: 6
-HBAN: 6
-MOLX: 6
-ETFC: 6
-JNS: 5
-CIEN: 6
-MTW: 5
-AMD: 6
-EMC: 6
-MI: 6
-XRX: 6
-MO: 6
-NWL: 5
-LSI: 5
-HCBK: 6
-EK: 6
-HST: 6
-MU: 6
-EP: 6
-WYN: 6
-TSN: 6
-KIM: 6
-AES: 6
-PKI: 6
-TSO: 6
-TSS: 6
-SAI: 5
-NI: 6
-LTD: 5
-WIN: 5
-TLAB: 6
-PCS: 6
-PBCT: 6
-PLD: 6
-CBG: 5
-ERTS: 5
-FHN: 5
-KBH: 6
-UNM: 6
-CBS: 5
-DUK: 6
-GE: 6
-DELL: 6
-WU: 6
-BAC: 5
-CCE: 5
-NYT: 5
-GCI: 6
-LUV: 5
-MWW: 5
-GT: 6
-LEG: 6
-NWSA: 6
-CMCSA: 6
-MOT: 6
-LEN: 6
-XL: 6
-IGT: 5
-XEL: 1
-
-TRADER FITNESS = 928.2373
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/27
----------------------------------
-Date: 2010/4/26
-Funds: 0.39474726
-TER: 7
-JAVA: 6
-IPG: 7
-YHOO: 6
-DNR: 6
-STI: 6
-BJS: 6
-SLE: 6
-PFE: 6
-DFS: 7
-QLGC: 7
-GLW: 7
-NOVL: 7
-SLM: 6
-JBL: 6
-CPWR: 7
-STZ: 6
-ODP: 6
-AA: 7
-MYL: 7
-BSX: 6
-RSH: 6
-CMS: 6
-NSM: 6
-AN: 7
-AIV: 6
-POM: 6
-RF: 6
-PGR: 6
-JDSU: 6
-MAS: 6
-KEY: 6
-AMAT: 6
-MAT: 6
-NDAQ: 7
-C: 7
-DHI: 7
-CNP: 6
-FTR: 6
-F: 7
-RX: 1
-M: 7
-THC: 7
-GNW: 7
-Q: 7
-FITB: 6
-TXT: 6
-SE: 6
-S: 7
-SVU: 6
-PHM: 6
-VLO: 7
-SYMC: 6
-KG: 6
-NVDA: 7
-WFR: 6
-ZION: 6
-KR: 6
-TIE: 7
-TE: 6
-INTC: 6
-HRB: 1
-SCHW: 6
-DF: 6
-HBAN: 6
-GPS: 6
-ETFC: 8
-JNS: 6
-AMD: 6
-EMC: 6
-MI: 6
-XRX: 7
-MO: 6
-NWL: 6
-LSI: 6
-HCBK: 6
-EK: 7
-HST: 6
-MU: 6
-EP: 6
-WYN: 6
-TSN: 6
-KIM: 6
-AES: 6
-PKI: 6
-TSO: 6
-TSS: 6
-SAI: 6
-NI: 6
-LTD: 6
-WIN: 6
-TLAB: 6
-PCS: 6
-PBCT: 6
-PLD: 6
-CBG: 6
-ERTS: 6
-FHN: 6
-UNM: 6
-CBS: 6
-DUK: 6
-GE: 6
-DELL: 6
-WU: 6
-BAC: 6
-NYT: 6
-GCI: 6
-LUV: 6
-MWW: 6
-GT: 6
-LEG: 6
-NWSA: 6
-CMCSA: 6
-MOT: 6
-LEN: 6
-XL: 6
-IGT: 6
-
-TRADER FITNESS = 1370.7383
-FINAL FITNESS = 1006.3095703125
-Run time 66.81 seconds, 5.92 seconds/generation
-
-
-Run number 5
-Too complex 0
-Duplicate 0
-
- Gen|              Fitness           |   Complexity    |    Depth   |Variety
-    |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    957.51     113.65      -0.00|   3   13.7    10|  2  3.7   4| 1.000  
-   1|    954.94     398.20       0.00|   3    5.4     5|  2  2.8   3| 0.500  
-   2|    834.20     438.40       0.00|   3    7.4     3|  2  3.2   3| 0.350  
-   3|    829.07     528.00     162.76|   3    7.9    13|  2  3.1   4| 0.200  
-   4|    947.12     544.70       0.00|   3    6.0     2|  2  2.6   2| 0.150  
-   5|   1000.89     639.30     251.95|   3    3.0     3|  2  2.0   2| 0.050  
-   6|    943.18     592.30       0.00|   3    3.4     3|  2  2.2   2| 0.250  
-   7|    913.07     534.00       0.00|   3    5.0    10|  2  3.0   5| 0.150  
-   8|    871.24     563.80      58.18|   3    3.0     3|  2  2.0   2| 0.050  
-   9|    859.64     563.30      -0.00|   3    3.0     3|  2  2.0   2| 0.150  
-  10|    993.63     551.40       0.00|   3    3.0     4|  2  2.0   3| 0.100  
-
-========================================================================
-Generation:10 best:2 worst:5
-  GP#           dad           mum oper mut shrk mut    fitness  len  dep
-===== ============= ============= ======== ======== ========== ==== ====
-B   2             2                                     993.63    3    2
-
-RPB:  (sub two price)
-
-
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/6
----------------------------------
-Date: 2010/3/8
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/21
----------------------------------
-Date: 2010/2/25
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/11
----------------------------------
-Date: 2010/4/13
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/12/10
----------------------------------
-Date: 2010/4/12
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/7
----------------------------------
-Date: 2010/3/8
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-FINAL FITNESS = 0.0
-Run time 44.59 seconds, 3.64 seconds/generation
-
-
-Run number 6
-Too complex 0
-Duplicate 0
-
- Gen|              Fitness           |   Complexity    |    Depth   |Variety
-    |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    541.57     125.30       0.00|   4   12.8    38|  3  3.6   6| 1.000  
-   1|    806.53     541.85     234.63|   4   12.4     8|  3  3.2   3| 0.300  
-   2|    939.90     543.10     288.58|   8    5.4     4|  3  3.0   3| 0.100  
-   3|    953.00     572.90     186.41|   8    7.0     8|  3  3.0   3| 0.100  
-   4|    964.76     544.80       0.00|   8    7.2    10|  3  3.0   5| 0.200  
-   5|    865.61     645.35     459.46|   8    7.9     8|  3  3.0   3| 0.100  
-   6|    904.39     569.20       0.00|   8    7.8     8|  3  3.0   5| 0.250  
-   7|   1064.06     545.35       0.00|  13    7.9     9|  6  3.1   4| 0.250  
-   8|   1546.14     763.40     445.43|  13    9.8     8|  6  4.0   3| 0.100  
-   9|   1323.97     935.25     487.70|  13   12.5     8|  6  5.7   3| 0.200  
-  10|   1593.93    1038.00     243.34|  13   13.6    13|  6  5.6   6| 0.200  
-
-========================================================================
-Generation:10 best:7 worst:8
-  GP#           dad           mum oper mut shrk mut    fitness  len  dep
-===== ============= ============= ======== ======== ========== ==== ====
-B   7             0                                    1593.93   13    6
-
-RPB:  (dec (max rev (ite (min (add sps past1m) (dec avg1w)) netcap two bps)))
-
-
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/13
----------------------------------
-Date: 2010/2/17
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/6
----------------------------------
-Date: 2010/3/8
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/3
----------------------------------
-Date: 2010/3/4
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/11/17
----------------------------------
-Date: 2010/3/17
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-
----------------------------------
-Trader Behavior on Market starting on 2009/10/14
----------------------------------
-Date: 2010/2/18
-Funds: 10000.0
-
-TRADER FITNESS = 0.0
-FINAL FITNESS = 0.0
-Run time 53.97 seconds, 4.72 seconds/generation
-
-
-Run number 7
-Too complex 0
-Duplicate 0
-
- Gen|              Fitness           |   Complexity    |    Depth   |Variety
-    |      Best    Average      Worst|   B      A     W|  B    A   W|
-   0|    852.74     175.60      -0.00|   3   10.0    46|  2  3.8   5| 1.000  
-   1|    901.11     456.80       0.00|   3   10.1     5|  2  3.2   2| 0.500  
-   2|   1030.61     680.45     296.75|   3    6.6    15|  2  2.6   4| 0.100  
-   3|    934.56     626.85     321.25|   3    3.0     3|  2  2.0   2| 0.050  
-   4|    998.96     440.35      -0.00|   3    3.7     2|  2  2.2   2| 0.300  
-   5|   1014.71     570.70       0.00|   3    3.6     2|  2  2.2   2| 0.200  
-   6|   1178.81     705.00     217.42|   3    3.0     3|  2  2.0   2| 0.050  
-   7|    959.79     551.50     162.05|   3    3.0     3|  2  2.0   2| 0.050  
-   8|   1269.11     582.35       0.00|   5    3.4    13|  3  2.2   6| 0.250  
-   9|   1317.27     838.50     387.69|   5    3.9     3|  3  2.4   2| 0.100  
+   0|      1.00       0.00       0.92|  10    5.0     5|  4  3.1   5| 1.000  
+   1|      1.00       0.00       0.94|   6    5.5     3|  3  3.2   2| 0.420  
+   2|      1.00       0.02       0.93|  10    5.4    10|  4  3.2   4| 0.180  
+   3|      1.00       0.02       0.94|  10    5.3     2|  4  3.2   2| 0.080  
+   4|      1.00       0.02       0.99|  10    7.0     4|  4  3.5   3| 0.040  

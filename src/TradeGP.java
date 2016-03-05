@@ -42,9 +42,9 @@ public class TradeGP extends GP {
             	for(String stock : tcfg.data.getStockSet()){
             		if(stock=="#")continue;
             		float result = ((TradeGene)get(0)).evaluate(tcfg, stock, this);
-            		if(result > 0) {
-            			result = (float) Math.log10(result);
-            		}
+//            		if(result > 0) {
+//            			result = (float) Math.log10(result);
+//            		}
 //            		if(result > maxFloat) {
 //            			maxFloat = result;
 //            		}
@@ -52,12 +52,12 @@ public class TradeGP extends GP {
 //            			minFloat = result;
 //            		}
             		try{
-            			if(result > 2) {
+            			if(result > 500) {
             				for(int j=0; j < 5; j++) {
             					tcfg.trader.buy(stock);
             				}
             			}
-            			else if(result>1.5) {
+            			else if(result>50) {
 	            			tcfg.trader.buy(stock);
 	            		}
             			else if(result < -100) {
