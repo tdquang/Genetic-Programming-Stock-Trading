@@ -187,8 +187,10 @@ public class StockData {
 		Path path2 = Paths.get(DPSPath);
 		int index = 0;
 		for (String line : Files.readAllLines(path2)){
+			
 			String[] splitLine = line.split(",");
 			if(index<2){
+				index++;
 				continue;
 			}
 			Stock stock = stocks.get(splitLine[1]);
@@ -203,39 +205,44 @@ public class StockData {
 			stock.roe = new float[32];
 			
 			for(int i = 0; i< 32; i++){
-				if(splitLine[4+i]!=""){
+				//System.out.println(splitLine[1]);
+				if(!splitLine[4+i].equals("")){
 					stock.dps[i] = Float.parseFloat(splitLine[4+i]);
 				}else{
 					stock.dps[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[36+i]!=""){
+				if(!splitLine[36+i].equals("")){
 					stock.eps[i] = Float.parseFloat(splitLine[36+i]);
 				}else{
 					stock.eps[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[68+i]!=""){
+				if(!splitLine[68+i].equals("")){
+					//System.out.println(splitLine[68+i]);
 					stock.bps[i] = Float.parseFloat(splitLine[68+i]);
 				}else{
 					stock.bps[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[100+i]!=""){
+				if(!splitLine[100+i].equals("")){
 					stock.sps[i] = Float.parseFloat(splitLine[100+i]);
 				}else{
 					stock.sps[i] = -1;
 				}
 			}
-			for(int i = 0; i<32; i++){
-				if(splitLine[132+i]!=""){
-					stock.roe[i] = Float.parseFloat(splitLine[132+i]);
+			for(int i = 132; i<splitLine.length; i++){
+				if(!splitLine[i].equals("")){
+					stock.roe[i-132] = Float.parseFloat(splitLine[i]);
 				}else{
-					stock.roe[i] = -1;
+					stock.roe[i-132] = -1;
 				}
+			}
+			for(int i = 163; i > splitLine.length; i--) {
+				stock.roe[i-132] = -1;
 			}
 
 		}
@@ -244,6 +251,7 @@ public class StockData {
 		for (String line : Files.readAllLines(path3)){
 			String[] splitLine = line.split(",");
 			if(index<2){
+				index++;
 				continue;
 			}
 			Stock stock = stocks.get(splitLine[1]);
@@ -252,10 +260,13 @@ public class StockData {
 				stocks.put(splitLine[1],stock);
 			}
 			stock.netCap = new float[84];
-			for(int i = 0; i<84; i++){
-				if(splitLine[i+4]!=""){
+			for(int i = 0; i<splitLine.length - 4; i++){
+				if(!splitLine[i+4].equals("")){
 					stock.netCap[i] = Float.parseFloat(splitLine[i+4]);
 				}
+			}
+			for(int i = 83; i > splitLine.length-4; i--) {
+				stock.netCap[i] = -1;
 			}
 		}
 		Path path4 = Paths.get(financialDeptPath);
@@ -263,6 +274,7 @@ public class StockData {
 		for (String line : Files.readAllLines(path4)){
 			String[] splitLine = line.split(",");
 			if(index<2){
+				index++;
 				continue;
 			}
 			Stock stock = stocks.get(splitLine[1]);
@@ -275,64 +287,75 @@ public class StockData {
 			stock.ebitda = new float[32];
 			stock.revenue = new float[32];
 			stock.opIncome = new float[32];
+			stock.netIncome = new float[32];
 			stock.opCashflow = new float[32];
 			stock.freeCashflow = new float[32];
 			
 			for(int i = 0; i< 32; i++){
-				if(splitLine[4+i]!=""){
+				if(!splitLine[4+i].equals("")){
 					stock.netFinancial[i] = Float.parseFloat(splitLine[4+i]);
 				}else{
 					stock.netFinancial[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[36+i]!=""){
+				if(!splitLine[36+i].equals("")){
 					stock.nonCInterest[i] = Float.parseFloat(splitLine[36+i]);
 				}else{
 					stock.nonCInterest[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[68+i]!=""){
+				if(!splitLine[68+i].equals("")){
 					stock.ebitda[i] = Float.parseFloat(splitLine[68+i]);
 				}else{
 					stock.ebitda[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[100+i]!=""){
+				if(!splitLine[100+i].equals("")){
 					stock.revenue[i] = Float.parseFloat(splitLine[100+i]);
 				}else{
 					stock.revenue[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[132+i]!=""){
+				if(!splitLine[132+i].equals("")){
 					stock.opIncome[i] = Float.parseFloat(splitLine[132+i]);
 				}else{
 					stock.opIncome[i] = -1;
 				}
 			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[164+i]!=""){
+				if(!splitLine[164+i].equals("")){
 					stock.netIncome[i] = Float.parseFloat(splitLine[164+i]);
 				}else{
 					stock.netIncome[i] = -1;
 				}
 			}
+			if(splitLine[1].equals("CB")) {
+				for(int i = 0; i<stock.freeCashflow.length; i++) {
+					stock.freeCashflow[i] = -1;
+					stock.netCap[i] = -1;
+				}
+				continue;
+			}
 			for(int i = 0; i<32; i++){
-				if(splitLine[196+i]!=""){
+				if(!splitLine[196+i].equals("")){
 					stock.opCashflow[i] = Float.parseFloat(splitLine[196+i]);
 				}else{
 					stock.opCashflow[i] = -1;
 				}
 			}
-			for(int i = 0; i<32; i++){
-				if(splitLine[228+i]!=""){
-					stock.freeCashflow[i] = Float.parseFloat(splitLine[228+i]);
+			for(int i = 228; i< splitLine.length; i++){
+				if(!splitLine[i].equals("")){
+					stock.freeCashflow[i-228] = Float.parseFloat(splitLine[i]);
 				}else{
-					stock.freeCashflow[i] = -1;
+					stock.freeCashflow[i-228] = -1;
 				}
+			}
+			for(int i = 259; i > splitLine.length; i--) {
+				stock.netCap[i-259] = -1;
 			}
 
 		}
@@ -617,11 +640,11 @@ public class StockData {
 		return stocks.keySet();
 	}
 	
-//	public static void main(String[] args) throws NumberFormatException, IOException{
-//		StockData test = new StockData();
-//		Object temp = test.stocks;
-//		
-//		System.out.println(test.getData("A", 2009, 8, 21));
-//	}
+	public static void main(String[] args) throws NumberFormatException, IOException{
+		StockData test = new StockData();
+		Object temp = test.stocks;
+		int[] date = {2009,8,21};
+		System.out.println(test.getDPS("MMM", date));
+	}
 
 }
