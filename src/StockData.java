@@ -58,7 +58,6 @@ public class StockData {
 		 * {@link StockData#getDailyData(String, Integer, Integer, Integer)}
 		 */
 		Map<Integer, Map<Integer, Map<Integer, StockDay>>> priceDates;
-		Map<Integer, Map<Integer, StockMonth>> stockData;
 		
 		/**
 		 * Create a new stock item
